@@ -15,6 +15,7 @@ use App\Models\Language;
 use App\Models\Platform;
 use App\Models\Region;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class GameController extends Controller
 {
@@ -131,12 +132,98 @@ class GameController extends Controller
      */
     public function update(Request $request, Game $game)
     {
+        /*$request->validate([
+            'nombre_inicial'                => 'nullable|string|min:2|max:255',
+            'traducciones'                  => 'nullable|array|min:1',
+            'traducciones.*.descripcion'    => 'nullable|string|min:6|max:5000',
+            'traducciones.*.idioma'         => 'nullable|string|exists:languages,locale',
+            'generos'                       => 'nullable|array|min:1',
+            'generos.*.nombre_inicial'      => 'nullable|string|exists:genres,slug',
+            'destacado'                     => 'nullable|in:Y,N',
+            'imagen'                        => 'nullable|url|min:6|max:255',
+            'video'                         => 'nullable|url|min:6|max:255',
+            'web'                           => 'nullable|url|min:6|max:255',
+        ]);*/
+
+        $validator = Validator::make($request->all(), [
+            'nombre_inicial'                => 'nullable|string|min:2|max:255',
+            'traducciones'                  => 'nullable|array|min:1',
+            'traducciones.*.descripcion'    => 'nullable|string|min:6|max:5000',
+            'traducciones.*.idioma'         => 'nullable|string|exists:languages,locale',
+            'generos'                       => 'nullable|array|min:1',
+            'generos.*.nombre_inicial'      => 'nullable|string|exists:genres,slug',
+            'destacado'                     => 'nullable|in:Y,N',
+            'imagen'                        => 'nullable|url|min:6|max:255',
+            'video'                         => 'nullable|url|min:6|max:255',
+            'web'                           => 'nullable|url|min:6|max:255',
+        ], [
+            'nombre_inicial.string'             => "Nombre inicial ha de ser una cadena de texto",
+            'nombre_inicial.min'                => "Mínimo 2 car",
+            'nombre_inicial.max'                => "Máximo 255 car",
+            'traducciones.array'                => "Traducciones han de ser un array",
+            'traducciones.min'                  => "Mínimo 1 traducción",
+            'traducciones.*.descripcion.string' => "Descripción ha de ser una cadena de texto",
+            'traducciones.*.descripcion.min'    => "Mínimo 6 car",
+            'traducciones.*.descripcion.max'    => "Máximo 5000 car",
+            'traducciones.*.idioma.string'      => "Idioma ha de ser una cadena de texto",
+            'traducciones.*.idioma.exists'      => "Idioma no existe",
+            'generos.array'                     => "Géneros han de ser un array",
+            'generos.min'                       => "Mínimo 1 género",
+            'generos.*.nombre_inicial.string'   => "Nombre inicial ha de ser una cadena de texto",
+            'generos.*.nombre_inicial.exists'   => "Género no existe",
+            'destacado.in'                      => "Destacado ha de ser Y o N",
+            'imagen.url'                        => "Imagen ha de ser una URL",
+            'imagen.min'                        => "Mínimo 6 car",
+            'imagen.max'                        => "Máximo 255 car",
+            'video.url'                         => "Video ha de ser una URL",
+            'video.min'                         => "Mínimo 6 car",
+            'video.max'                         => "Máximo 255 car",
+            'web.url'                           => "Web ha de ser una URL",
+            'web.min'                           => "Mínimo 6 car",
+            'web.max'                           => "Máximo 255 car",
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 422);
+        }
+
         $game->update([
             'slug'      => $request->nombre_inicial,
+            'featured'  => $request->destacado,
             'image'     => $request->imagen,
             'video'     => $request->video,
             'website'   => $request->web
         ]);
+
+        if ($request->traducciones) {
+            foreach ($request->traducciones as $traduccion) {
+                $gameTranslation = GameTranslation::where('game_id', $game->id)
+                    ->where('language_id', Language::where('locale', $traduccion['idioma'])->value('id'))
+                    ->first();
+
+                if ($gameTranslation) {
+                    $gameTranslation->update([
+                        'description' => $traduccion['descripcion'],
+                    ]);
+                } else {
+                    GameTranslation::create([
+                        'description' => $traduccion['descripcion'],
+                        'game_id'     => $game->id,
+                        'language_id' => Language::where('locale', $traduccion['idioma'])->value('id')
+                    ]);
+                }
+            }
+        }
+        if ($request->generos) {
+            $genreIds = [];
+            foreach ($request->generos as $genero) {
+                $genreId = Genre::where('slug', $genero['nombre_inicial'])->value('id');
+                if ($genreId) {
+                    $genreIds[] = $genreId;
+                }
+            }
+            $game->genres()->sync($genreIds);
+        }
 
         return (new GameResource($game))->additional(['meta' => 'Juego actualizado correctamente']);
     }
@@ -146,6 +233,10 @@ class GameController extends Controller
      */
     public function destroy(Game $game)
     {
+        $game->load([
+            'gameTranslations'
+        ]);
+
         foreach ($game->gameReleases as $release) {
             $release->gameDevelopers()->delete();
             $release->gamePublishers()->delete();
