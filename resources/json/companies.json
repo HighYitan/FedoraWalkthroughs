@@ -1,0 +1,86 @@
+[
+    {
+        "name": "Nintendo",
+        "foundation_year": 1889,
+        "country_id": 10,
+        "website": "https://en.wikipedia.org/wiki/Nintendo",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Nintendo.svg/1920px-Nintendo.svg.png"
+    },
+    {
+        "name": "Sega",
+        "foundation_year": 1960,
+        "country_id": 10,
+        "website": "https://en.wikipedia.org/wiki/Sega",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/SEGA_logo.svg/1920px-SEGA_logo.svg.png"
+    },
+    {
+        "name": "Atlus",
+        "foundation_year": 1986,
+        "country_id": 10,
+        "website": "https://en.wikipedia.org/wiki/Atlus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Atlus_logo_%282014%29.svg/1920px-Atlus_logo_%282014%29.svg.png"
+    },
+    {
+        "name": "Philips",
+        "foundation_year": 1891,
+        "country_id": 13,
+        "website": "https://en.wikipedia.org/wiki/Philips",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Philips_logo_new.svg/1920px-Philips_logo_new.svg.png"
+    },
+    {
+        "name": "Square",
+        "foundation_year": 1986,
+        "country_id": 10,
+        "website": "https://en.wikipedia.org/wiki/Square_(video_game_company)",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Square_Logo.svg/1920px-Square_Logo.svg.png"
+    },
+    {
+        "name": "Enix",
+        "foundation_year": 1975,
+        "country_id": 10,
+        "website": "https://en.wikipedia.org/wiki/Enix",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Enix.svg/800px-Enix.svg.png"
+    },
+    {
+        "name": "Square Enix",
+        "foundation_year": 2003,
+        "country_id": 10,
+        "website": "https://en.wikipedia.org/wiki/Square_Enix",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Square_Enix_logo.svg/1920px-Square_Enix_logo.svg.png"
+    },
+    {
+        "name": "Sony",
+        "foundation_year": 1946,
+        "country_id": 10,
+        "website": "https://en.wikipedia.org/wiki/Sony",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Sony_logo.svg/1920px-Sony_logo.svg.png"
+    },
+    {
+        "name": "Illwinter Game Design",
+        "foundation_year": 2001,
+        "country_id": 14,
+        "website": "https://en.wikipedia.org/wiki/Illwinter_Game_Design",
+        "image": "https://www.giantbomb.com/a/uploads/scale_medium/0/2891/814569-illwinter_logo.jpg"
+    },
+    {
+        "name": "Paradox Interactive",
+        "foundation_year": 1999,
+        "country_id": 14,
+        "website": "https://en.wikipedia.org/wiki/Paradox_Interactive",
+        "image": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d0/Paradox_Interactive_logo.svg/800px-Paradox_Interactive_logo.svg.png"
+    },
+    {
+        "name": "Capcom",
+        "foundation_year": 1979,
+        "country_id": 10,
+        "website": "https://en.wikipedia.org/wiki/Capcom",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Capcom_logo.svg/1920px-Capcom_logo.svg.png"
+    },
+    {
+        "name": "Konami",
+        "foundation_year": 1969,
+        "country_id": 10,
+        "website": "https://en.wikipedia.org/wiki/Konami",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Konami_logo.svg/1920px-Konami_logo.svg.png"
+    }
+]

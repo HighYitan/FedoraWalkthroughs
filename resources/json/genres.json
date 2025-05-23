@@ -1,0 +1,200 @@
+[
+    {
+        "name": "JRPG",
+        "description": "JRPG, significa Juego de Rol Japonés, es un tipo de videojuego de rol que se origina en Japón. Se caracteriza por una combinación de tradiciones de diseño, narrativa y mecánicas de juego que suelen asociarse con el desarrollo de videojuegos japonés. Normalmente, los JRPG presentan una historia predeterminada, un grupo de varios personajes controlables y un énfasis en la narrativa y la historia.",
+        "genre_id": 1,
+        "language_id": 1
+    },
+    {
+        "name": "JRPG",
+        "description": "JRPG, significa Joc de Rol Japonès, és un tipus de videojoc de rol que s'origina al Japó. Es caracteritza per una combinació de tradicions de disseny, narrativa i mecàniques de joc que sovint s'associen amb el desenvolupament de videojocs japonès. Normalment, els JRPG presenten una història predeterminada, un grup de diversos personatges controlables i un èmfasi en la narrativa i la història.",
+        "genre_id": 1,
+        "language_id": 2
+    },
+    {
+        "name": "JRPG",
+        "description": "A JRPG, which stands for Japanese Role-Playing Game, is a type of role-playing video game that originates from Japan. It is characterized by a combination of design traditions, storytelling, and gameplay mechanics that are often associated with Japanese video game development. Typically, JRPGs feature a pre-determined story, a party of multiple controllable characters, and an emphasis on narrative and storytelling.",
+        "genre_id": 1,
+        "language_id": 3
+    },
+    {
+        "name": "WRPG",
+        "description": "WRPG, o juego de rol occidental, es un género tradicional de videojuegos de rol derivado de las tradiciones de diseño originarias de Estados Unidos y el mundo occidental. Generalmente, los WRPG permiten personalizar el personaje del jugador, ofrecen una jugabilidad abierta y no lineal, exploración de un gran mundo de juego y un alto nivel de libertad para el jugador. Estos juegos suelen centrarse en la construcción del personaje, donde las nuevas habilidades pueden cambiar drásticamente el estilo de juego y el jugador tiene un control significativo sobre cómo desarrolla a su personaje.",
+        "genre_id": 2,
+        "language_id": 1
+    },
+    {
+        "name": "WRPG",
+        "description": "WRPG, o joc de rol occidental, és un gènere tradicional de videojocs de rol derivat de les tradicions de disseny originàries dels Estats Units i del món occidental. Generalment, els WRPG permeten personalitzar el personatge del jugador, ofereixen una jugabilitat oberta i no lineal, l'exploració d'un gran món de joc i un alt nivell de llibertat per al jugador. Aquests jocs solen centrar-se en la construcció del personatge, on les noves habilitats poden canviar dràsticament l'estil de joc i el jugador té un control significatiu sobre com desenvolupa el seu personatge.",
+        "genre_id": 2,
+        "language_id": 2
+    },
+    {
+        "name": "WRPG",
+        "description": "A WRPG, or Western role-playing game, is a traditional genre of role-playing video game derived from design traditions originating in the United States and the western world. Generally, WRPGs involve a customizable player character, open-ended and non-linear gameplay, exploration of a large game world, and an overall high level of player agency. These games often focus on the construction of a character, where new abilities can drastically change the player's gameplay style, and the player has significant control over how their character develops.",
+        "genre_id": 2,
+        "language_id": 3
+    },
+    {
+        "name": "TRPG",
+        "description": "Un RPG táctico, también conocido como RPG de estrategia o RPG de simulación, es un subgénero de los videojuegos de rol que incorpora elementos de los juegos de estrategia como alternativa a los sistemas tradicionales de RPG. Estos juegos suelen implicar el control de un grupo limitado de personajes y el enfrentamiento contra un número similar de enemigos, con un énfasis en el movimiento táctico sobre una cuadrícula isométrica. En los RPG tácticos, el desarrollo de los personajes está estrechamente ligado a su papel en el combate, ofreciendo a menudo ventajas tácticas distintas según las diferentes clases o trabajos. El género suele incluir un fuerte componente narrativo, con una historia que se desarrolla entre batallas, y los jugadores deben gestionar diversos recursos como la salud, el maná, el equipo y el tamaño del grupo.",
+        "genre_id": 3,
+        "language_id": 1
+    },
+    {
+        "name": "TRPG",
+        "description": "Un RPG tàctic, també conegut com a RPG d'estratègia o RPG de simulació, és un subgènere dels videojocs de rol que incorpora elements dels jocs d'estratègia com a alternativa als sistemes tradicionals de RPG. Aquests jocs solen implicar el control d'un grup limitat de personatges i l'enfrontament contra un nombre similar d'enemics, amb un èmfasi en el moviment tàctic sobre una graella isomètrica. En els RPG tàctics, el desenvolupament dels personatges està estretament lligat al seu paper en el combat, oferint sovint avantatges tàctics diferents segons les diferents classes o oficis. El gènere sol incloure un fort component narratiu, amb una història que es desenvolupa entre batalles, i els jugadors han de gestionar diversos recursos com la salut, el manà, l'equipament i la mida del grup.",
+        "genre_id": 3,
+        "language_id": 2
+    },
+    {
+        "name": "TRPG",
+        "description": "A tactical RPG, also known as a strategy RPG or simulation RPG, is a subgenre of role-playing video games that incorporates elements from strategy video games as an alternative to traditional RPG systems. These games typically involve controlling a finite party and battling a similar number of enemies, with an emphasis on tactical movement on an isometric grid. In tactical RPGs, character development is closely tied to their role in combat, often offering distinct tactical advantages based on different classes or jobs. The genre usually includes a strong narrative component, with a storyline that unfolds between battles, and players must manage various resources such as health, mana, equipment, and party size.",
+        "genre_id": 3,
+        "language_id": 3
+    },
+    {
+        "name": "ARPG",
+        "description": "Los RPG de acción, también conocidos como ARPG, son un subgénero de los videojuegos de rol que combinan elementos de acción y aventura con mecánicas de juego de rol. A diferencia de los RPG tradicionales, donde el combate se basa en turnos y la estrategia es clave, los ARPG suelen presentar un sistema de combate en tiempo real, lo que permite a los jugadores participar directamente en las batallas. Estos juegos suelen centrarse en la exploración, la recolección de objetos y la mejora del personaje a través de la experiencia ganada en combate.",
+        "genre_id": 4,
+        "language_id": 1
+    },
+    {
+        "name": "ARPG",
+        "description": "Els RPG d'acció, també coneguts com a ARPG, són un subgènere dels videojocs de rol que combinen elements d'acció i aventura amb mecàniques de joc de rol. A diferència dels RPG tradicionals, on el combat es basa en torns i l'estratègia és clau, els ARPG solen presentar un sistema de combat en temps real, cosa que permet als jugadors participar directament en les batalles. Aquests jocs solen centrar-se en l'exploració, la recol·lecció d'objectes i la millora del personatge a través de l'experiència guanyada en combat.",
+        "genre_id": 4,
+        "language_id": 2
+    },
+    {
+        "name": "ARPG",
+        "description": "Action role-playing games (ARPGs) are a subgenre of role-playing video games that combine elements of action and adventure with role-playing game mechanics. Unlike traditional RPGs, where combat is turn-based and strategy is key, ARPGs typically feature real-time combat systems that allow players to directly engage in battles. These games often focus on exploration, item collection, and character improvement through experience gained in combat.",
+        "genre_id": 4,
+        "language_id": 3
+    },
+    {
+        "name": "Dungeon Crawler",
+        "description": "Los Dungeon Crawlers son un subgénero de los videojuegos de rol que se centran en la exploración de mazmorras y la lucha contra enemigos en entornos cerrados. Estos juegos suelen presentar una perspectiva en primera persona o isométrica y enfatizan la recolección de tesoros, la resolución de acertijos y el combate táctico. Los jugadores suelen controlar un grupo de personajes que deben enfrentarse a hordas de enemigos y jefes en niveles generados aleatoriamente o predefinidos.",
+        "genre_id": 5,
+        "language_id": 1
+    },
+    {
+        "name": "Dungeon Crawler",
+        "description": "Els Dungeon Crawlers són un subgènere dels videojocs de rol que se centren en l'exploració de masmorres i la lluita contra enemics en entorns tancats. Aquests jocs solen presentar una perspectiva en primera persona o isomètrica i fan èmfasi en la recol·lecció de tresors, la resolució d'endevinalles i el combat tàctic. Els jugadors solen controlar un grup de personatges que han d'enfrontar-se a hordes d'enemics i caps en nivells generats aleatòriament o predefinits.",
+        "genre_id": 5,
+        "language_id": 2
+    },
+    {
+        "name": "Dungeon Crawler",
+        "description": "Dungeon crawlers are a subgenre of role-playing video games that focus on exploring dungeons and battling enemies in enclosed environments. These games often feature a first-person or isometric perspective and emphasize treasure collection, puzzle-solving, and tactical combat. Players typically control a party of characters who must face hordes of enemies and bosses in randomly generated or predefined levels.",
+        "genre_id": 5,
+        "language_id": 3
+    },
+    {
+        "name": "Gran Estrategia",
+        "description": "La Gran Estrategia es un subgénero de los videojuegos de estrategia que se centra en la gestión y el control de un imperio o nación a lo largo de un período prolongado. Estos juegos suelen incluir elementos de diplomacia, economía, guerra y desarrollo tecnológico, permitiendo a los jugadores tomar decisiones estratégicas que afectan el curso de la historia. A menudo, los jugadores deben equilibrar la expansión territorial con la gestión interna y las relaciones exteriores.",
+        "genre_id": 6,
+        "language_id": 1
+    },
+    {
+        "name": "Gran Estratègia",
+        "description": "La Gran Estratègia és un subgènere dels videojocs d'estratègia que se centra en la gestió i el control d'un imperi o nació al llarg d'un període prolongat. Aquests jocs solen incloure elements de diplomàcia, economia, guerra i desenvolupament tecnològic, permetent als jugadors prendre decisions estratègiques que afecten el curs de la història. Sovint, els jugadors han d'equilibrar l'expansió territorial amb la gestió interna i les relacions exteriors.",
+        "genre_id": 6,
+        "language_id": 2
+    },
+    {
+        "name": "Grand Strategy",
+        "description": "Grand strategy is a subgenre of strategy video games that focuses on the management and control of an empire or nation over an extended period. These games often include elements of diplomacy, economy, warfare, and technological development, allowing players to make strategic decisions that affect the course of history. Players often have to balance territorial expansion with internal management and foreign relations.",
+        "genre_id": 6,
+        "language_id": 3
+    },
+    {
+        "name": "RTS",
+        "description": "Los juegos de estrategia en tiempo real (RTS) son un subgénero de los videojuegos de estrategia que permiten a los jugadores controlar unidades y recursos en tiempo real, en lugar de turnos. Estos juegos suelen incluir elementos de construcción de bases, gestión de recursos y combate táctico. Los jugadores deben tomar decisiones rápidas y estratégicas para superar a sus oponentes y lograr sus objetivos.",
+        "genre_id": 7,
+        "language_id": 1
+    },
+    {
+        "name": "RTS",
+        "description": "Els jocs d'estratègia en temps real (RTS) són un subgènere dels videojocs d'estratègia que permeten als jugadors controlar unitats i recursos en temps real, en lloc de torns. Aquests jocs solen incloure elements de construcció de bases, gestió de recursos i combat tàctic. Els jugadors han de prendre decisions ràpides i estratègiques per superar els seus oponents i assolir els seus objectius.",
+        "genre_id": 7,
+        "language_id": 2
+    },
+    {
+        "name": "RTS",
+        "description": "Real-time strategy (RTS) games are a subgenre of strategy video games that allow players to control units and resources in real time, rather than in turns. These games often include elements of base building, resource management, and tactical combat. Players must make quick and strategic decisions to outmaneuver their opponents and achieve their objectives.",
+        "genre_id": 7,
+        "language_id": 3
+    },
+    {
+        "name": "Survival Horror",
+        "description": "El Survival Horror es un subgénero de los videojuegos de terror que combina elementos de supervivencia y horror. Estos juegos suelen presentar una atmósfera tensa y opresiva, con enemigos aterradores y recursos limitados. Los jugadores deben resolver acertijos, explorar entornos oscuros y enfrentarse a criaturas aterradoras mientras intentan sobrevivir. La narrativa suele ser un componente clave, con historias que se desarrollan a medida que los jugadores avanzan en el juego.",
+        "genre_id": 8,
+        "language_id": 1
+    },
+    {
+        "name": "Survival Horror",
+        "description": "El Survival Horror és un subgènere dels videojocs de terror que combina elements de supervivència i horror. Aquests jocs solen presentar una atmosfera tensa i opressiva, amb enemics aterridors i recursos limitats. Els jugadors han de resoldre endevinalles, explorar entorns foscos i enfrontar-se a criatures aterridores mentre intenten sobreviure. La narrativa sol ser un component clau, amb històries que es desenvolupen a mesura que els jugadors avancen en el joc.",
+        "genre_id": 8,
+        "language_id": 2
+    },
+    {
+        "name": "Survival Horror",
+        "description": "Survival horror is a subgenre of horror video games that combines elements of survival and horror. These games often feature a tense and oppressive atmosphere, with terrifying enemies and limited resources. Players must solve puzzles, explore dark environments, and confront horrifying creatures while trying to survive. The narrative is often a key component, with stories unfolding as players progress through the game.",
+        "genre_id": 8,
+        "language_id": 3
+    },
+    {
+        "name": "Bullet Hell",
+        "description": "El Bullet Hell es un subgénero de los videojuegos de disparos que se caracteriza por la presencia de una gran cantidad de proyectiles en pantalla, lo que crea patrones complejos y desafiantes para el jugador. Estos juegos suelen requerir reflejos rápidos y habilidades de evasión precisas, ya que los jugadores deben navegar a través de una lluvia constante de balas mientras intentan eliminar enemigos. La estética visual y la música suelen ser elementos destacados en este género.",
+        "genre_id": 9,
+        "language_id": 1
+    },
+    {
+        "name": "Bullet Hell",
+        "description": "El Bullet Hell és un subgènere dels videojocs de trets que es caracteritza per la presència d'una gran quantitat de projectils a la pantalla, cosa que crea patrons complexos i desafiadors per al jugador. Aquests jocs solen requerir reflexos ràpids i habilitats d'evitació precises, ja que els jugadors han de navegar a través d'una pluja constant de bales mentre intenten eliminar enemics. L'estètica visual i la música solen ser elements destacats en aquest gènere.",
+        "genre_id": 9,
+        "language_id": 2
+    },
+    {
+        "name": "Bullet Hell",
+        "description": "Bullet hell is a subgenre of shooting video games characterized by the presence of a large number of projectiles on screen, creating complex and challenging patterns for the player. These games often require quick reflexes and precise evasion skills, as players must navigate through a constant rain of bullets while trying to eliminate enemies. Visual aesthetics and music are often standout elements in this genre.",
+        "genre_id": 9,
+        "language_id": 3
+    },
+    {
+        "name": "Sigilo",
+        "description": "El Sigilo es un subgénero de los videojuegos que se centra en la mecánica de ocultarse y evitar ser detectado por enemigos. Estos juegos suelen requerir que los jugadores utilicen el entorno a su favor, planifiquen sus movimientos y tomen decisiones estratégicas para completar objetivos sin ser vistos. La narrativa y la atmósfera suelen ser componentes clave, creando una experiencia inmersiva y tensa.",
+        "genre_id": 10,
+        "language_id": 1
+    },
+    {
+        "name": "Sigil",
+        "description": "El Sigil és un subgènere dels videojocs que se centra en la mecànica d'amagar-se i evitar ser detectat per enemics. Aquests jocs solen requerir que els jugadors utilitzin l'entorn a favor seu, planifiquin els seus moviments i prenguin decisions estratègiques per completar objectius sense ser vistos. La narrativa i l'atmosfera solen ser components clau, creant una experiència immersiva i tensa.",
+        "genre_id": 10,
+        "language_id": 2
+    },
+    {
+        "name": "Stealth",
+        "description": "Stealth is a subgenre of video games that focuses on the mechanics of hiding and avoiding detection by enemies. These games often require players to use the environment to their advantage, plan their movements, and make strategic decisions to complete objectives without being seen. Narrative and atmosphere are often key components, creating an immersive and tense experience.",
+        "genre_id": 10,
+        "language_id": 3
+    },
+    {
+        "name": "Plataformas",
+        "description": "Los juegos de plataformas son un género de videojuegos que se centran en el control de un personaje que debe saltar entre plataformas y evitar obstáculos. Estos juegos suelen presentar niveles diseñados con una variedad de desafíos, como enemigos, trampas y acertijos. La jugabilidad se basa en la precisión del salto y el movimiento, y a menudo incluyen elementos de exploración y recolección.",
+        "genre_id": 11,
+        "language_id": 1
+    },
+    {
+        "name": "Plataformes",
+        "description": "Els jocs de plataformes són un gènere de videojocs que se centren en el moviment del personatge a través d'entorns bidimensionals o tridimensionals, saltant entre plataformes i evitant obstacles. Aquests jocs solen incloure elements d'exploració, recol·lecció d'objectes i resolució d'endevinalles. La jugabilitat es basa en la precisió i el control del personatge, i sovint presenten nivells desafiants amb enemics i trampes.",
+        "genre_id": 11,
+        "language_id": 2
+    },
+    {
+        "name": "Platformer",
+        "description": "Platform games are a genre of video games that focus on character movement through two-dimensional or three-dimensional environments, jumping between platforms and avoiding obstacles. These games often include elements of exploration, item collection, and puzzle-solving. Gameplay is based on precision and character control, and they often feature challenging levels with enemies and traps.",
+        "genre_id": 11,
+        "language_id": 3
+    }
+]

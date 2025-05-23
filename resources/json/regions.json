@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Europa",
+        "region_id": 1,
+        "language_id": 1
+    },
+    {
+        "name": "Europa",
+        "region_id": 1,
+        "language_id": 2
+    },
+    {
+        "name": "Europe",
+        "region_id": 1,
+        "language_id": 3
+    },
+    {
+        "name": "América del Norte",
+        "region_id": 2,
+        "language_id": 1
+    },
+    {
+        "name": "Amèrica del Nord",
+        "region_id": 2,
+        "language_id": 2
+    },
+    {
+        "name": "North America",
+        "region_id": 2,
+        "language_id": 3
+    },
+    {
+        "name": "Japón",
+        "region_id": 3,
+        "language_id": 1
+    },
+    {
+        "name": "Japó",
+        "region_id": 3,
+        "language_id": 2
+    },
+    {
+        "name": "Japan",
+        "region_id": 3,
+        "language_id": 3
+    },
+    {
+        "name": "Internacional",
+        "region_id": 4,
+        "language_id": 1
+    },
+    {
+        "name": "Internacional",
+        "region_id": 4,
+        "language_id": 2
+    },
+    {
+        "name": "International",
+        "region_id": 4,
+        "language_id": 3
+    }
+]

@@ -1,0 +1,44 @@
+[
+    {
+        "title": "¡Fedora Walkthroughs abre sus puertas a la comunidad!",
+        "content": "Estamos muy emocionados de anunciar que Fedora Walkthroughs ha abierto sus puertas a la comunidad. Ahora puedes registrarte y compartir tus propias guías y/o expresar tus opiniones en nuestro foro sobre videojuegos. ¡Únete a nosotros y sé parte de esta increíble comunidad!\n\nPara más información, únete a nuestro servidor de Discord.",
+        "image": "https://assetsio.gnwcdn.com/europa-universalis-5-explained-6.jpg?width=1920&height=1920&fit=bounds&quality=70&format=jpg&auto=webp",
+        "news_id": 1,
+        "language_id": 1
+    },
+    {
+        "title": "Fedora Walkthroughs obre les seves portes a la comunitat!",
+        "content": "Estem molt emocionats d'anunciar que Fedora Walkthroughs ha obert les seves portes a la comunitat. Ara pots registrar-te i compartir les teves pròpies guies i/o expressar les teves opinions al nostre fòrum sobre videojocs. Uneix-te a nosaltres i sigues part d'aquesta increïble comunitat!\n\nPer a més informació, uneix-te al nostre servidor de Discord.",
+        "image": "https://assetsio.gnwcdn.com/europa-universalis-5-explained-6.jpg?width=1920&height=1920&fit=bounds&quality=70&format=jpg&auto=webp",
+        "news_id": 1,
+        "language_id": 2
+    },
+    {
+        "title": "Fedora Walkthroughs opens its doors to the community!",
+        "content": "We are very excited to announce that Fedora Walkthroughs has opened its doors to the community. Now you can register and share your own guides and/or express your opinions in our video game forum. Join us and be part of this incredible community!\n\nFor more information, join our Discord server.",
+        "image": "https://assetsio.gnwcdn.com/europa-universalis-5-explained-6.jpg?width=1920&height=1920&fit=bounds&quality=70&format=jpg&auto=webp",
+        "news_id": 1,
+        "language_id": 3
+    },
+    {
+        "title": "Lanzamiento confirmado de Europa Universalis V",
+        "content": "Paradox Interactive aún no ha confirmado una fecha de lanzamiento para Europa Universalis 5. Basándonos en nuestra experiencia con una versión preliminar del juego, creemos que EU5 se lanzará en 2027.\n\nParadox ha lanzado juegos en Steam Early Access, por lo que existe la posibilidad de que EU5 pueda lanzarse en algún momento antes de 2027, aunque en un estado inacabado. Esto es pura especulación, pero dado la cantidad de contenido que hay en la versión de acceso anticipado, podríamos ver a Paradox dando a los fans la oportunidad de ayudar a dar forma al juego.\n\nPuedes mantenerte al día con los últimos desarrollos visitando el blog Tinto Talks en los foros de Paradox. Estos blogs de desarrollo son del equipo de Paradox Tinto, el estudio de Paradox con sede en Barcelona que se inauguró en junio de 2020. Johan Andersson, el creador original de Europa Universalis, lidera el desarrollo del juego.",
+        "image": "https://assetsio.gnwcdn.com/europa-universalis-5-explained-6.jpg?width=1920&height=1920&fit=bounds&quality=70&format=jpg&auto=webp",
+        "news_id": 2,
+        "language_id": 1
+    },
+    {
+        "title": "Llançament confirmat d'Europa Universalis V",
+        "content": "Paradox Interactive encara no ha confirmat una data de llançament per a Europa Universalis 5. Basant-nos en la nostra experiència amb una versió preliminar del joc, creiem que EU5 es llançarà el 2027.\n\nParadox ha llançat jocs a Steam Early Access, per la qual cosa existeix la possibilitat que EU5 pugui llançar-se en algun moment abans del 2027, tot i que en un estat inacabat. Això és pura especulació, però donada la quantitat de contingut que hi ha a la versió d'accés anticipat, podríem veure a Paradox donant als fans l'oportunitat d'ajudar a donar forma al joc.\n\nPots mantenir-te al dia amb els últims desenvolupaments visitant el blog Tinto Talks als fòrums de Paradox. Aquests blogs de desenvolupament són de l'equip de Paradox Tinto, l'estudi de Paradox amb seu a Barcelona que es va inaugurar el juny de 2020. Johan Andersson, el creador original d'Europa Universalis, lidera el desenvolupament del joc.",
+        "image": "https://assetsio.gnwcdn.com/europa-universalis-5-explained-6.jpg?width=1920&height=1920&fit=bounds&quality=70&format=jpg&auto=webp",
+        "news_id": 2,
+        "language_id": 2
+    },
+    {
+        "title": "Confirmed release of Europa Universalis V",
+        "content": "Paradox Interactive has not confirmed a release date for Europa Universalis 5 just yet. Based on our experience with an early build of the game, we believe EU5 will launch in 2027.\n\nParadox has released games on Steam Early Access, so there is a chance EU5 could launch sometime before 2027, albeit in an unfinished state. This is purely speculation, but given how much content is in the early access build, we could see Paradox giving fans a chance to help shape the game.\n\nYou can stay up to date with the latest developments by heading over to the Tinto Talks blog on the Paradox forums. These dev blogs are from the Paradox Tinto team, Paradox's studio based in Barcelona that was opened back in June 2020. Johan Andersson, the original creator of the Europa Universalis, leads the game's development.",
+        "image": "https://assetsio.gnwcdn.com/europa-universalis-5-explained-6.jpg?width=1920&height=1920&fit=bounds&quality=70&format=jpg&auto=webp",
+        "news_id": 2,
+        "language_id": 3
+    }
+]

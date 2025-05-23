@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Juegos",
+        "user_interface_id": 1,
+        "language_id": 1
+    },
+    {
+        "name": "Jocs",
+        "user_interface_id": 1,
+        "language_id": 2
+    },
+    {
+        "name": "Games",
+        "user_interface_id": 1,
+        "language_id": 3
+    },
+    {
+        "name": "Guías",
+        "user_interface_id": 2,
+        "language_id": 1
+    },
+    {
+        "name": "Guias",
+        "user_interface_id": 2,
+        "language_id": 2
+    },
+    {
+        "name": "Guides",
+        "user_interface_id": 2,
+        "language_id": 3
+    },
+    {
+        "name": "Noticias",
+        "user_interface_id": 3,
+        "language_id": 1
+    },
+    {
+        "name": "Noticies",
+        "user_interface_id": 3,
+        "language_id": 2
+    },
+    {
+        "name": "News",
+        "user_interface_id": 3,
+        "language_id": 3
+    },
+    {
+        "name": "Foros",
+        "user_interface_id": 4,
+        "language_id": 1
+    },
+    {
+        "name": "Fòrums",
+        "user_interface_id": 4,
+        "language_id": 2
+    },
+    {
+        "name": "Forums",
+        "user_interface_id": 4,
+        "language_id": 3
+    }
+]

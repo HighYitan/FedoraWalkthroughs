@@ -1,0 +1,26 @@
+[
+    {
+        "game_id": 1,
+        "genre_id": 1
+    },
+    {
+        "game_id": 1,
+        "genre_id": 5
+    },
+    {
+        "game_id": 2,
+        "genre_id": 1
+    },
+    {
+        "game_id": 3,
+        "genre_id": 3
+    },
+    {
+        "game_id": 4,
+        "genre_id": 11
+    },
+    {
+        "game_id": 5,
+        "genre_id": 10
+    }
+]

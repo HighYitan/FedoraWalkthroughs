@@ -1,0 +1,62 @@
+[
+    {
+        "name": "NES",
+        "release_year": 1983,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Nintendo_Entertainment_System_%28NES%29.png/800px-Nintendo_Entertainment_System_%28NES%29.png",
+        "company_id": 1
+    },
+    {
+        "name": "SNES",
+        "release_year": 1990,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Super_Nintendo_Entertainment_System_%28SNES%29.png/800px-Super_Nintendo_Entertainment_System_%28SNES%29.png",
+        "company_id": 1
+    },
+    {
+        "name": "Nintendo 64",
+        "release_year": 1996,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Nintendo_64_%28N64%29.png/800px-Nintendo_64_%28N64%29.png",
+        "company_id": 1
+    },
+    {
+        "name": "GameCube",
+        "release_year": 2001,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Nintendo_GameCube_%28GameCube%29.png/800px-Nintendo_GameCube_%28GameCube%29.png",
+        "company_id": 1
+    },
+    {
+        "name": "Sega Mega Drive",
+        "release_year": 1988,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Sega_Mega_Drive_%28Mega_Drive%29.png/800px-Sega_Mega_Drive_%28Mega_Drive%29.png",
+        "company_id": 2
+    },
+    {
+        "name": "Sega Saturn",
+        "release_year": 1994,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Sega_Saturn_%28Saturn%29.png/800px-Sega_Saturn_%28Saturn%29.png",
+        "company_id": 2
+    },
+    {
+        "name": "Dreamcast",
+        "release_year": 1998,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Sega_Dreamcast_%28Dreamcast%29.png/800px-Sega_Dreamcast_%28Dreamcast%29.png",
+        "company_id": 2
+    },
+    {
+        "name": "Philips CD-i",
+        "release_year": 1991,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Philips_CD-i_%28CD-i%29.png/800px-Philips_CD-i_%28CD-i%29.png",
+        "company_id": 4
+    },
+    {
+        "name": "PlayStation",
+        "release_year": 1994,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Sony_PlayStation_%28PS1%29.png/800px-Sony_PlayStation_%28PS1%29.png",
+        "company_id": 8
+    },
+    {
+        "name": "PlayStation 2",
+        "release_year": 2000,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Sony_PlayStation_2_%28PS2%29.png/800px-Sony_PlayStation_2_%28PS2%29.png",
+        "company_id": 8
+    }
+]

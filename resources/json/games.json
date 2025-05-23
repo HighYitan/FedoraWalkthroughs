@@ -1,0 +1,106 @@
+[
+    {
+        "name": "Shin Megami Tensei",
+        "release_date": "1992-10-30",
+        "image": "https://upload.wikimedia.org/wikipedia/en/4/43/Shin_Megami_Tensei_The_First.jpg",
+        "video": "https://www.youtube.com/watch?v=a2G8UIO4epI",
+        "website": "https://en.wikipedia.org/wiki/Shin_Megami_Tensei_(video_game)",
+        "region_id": 2
+    },
+    {
+        "name": "Final Fantasy IX",
+        "release_date": "2000-07-07",
+        "image": "https://upload.wikimedia.org/wikipedia/en/5/51/Ffixbox.jpg",
+        "video": "https://www.youtube.com/watch?v=Cv7UW2IvfzQ",
+        "website": "https://en.wikipedia.org/wiki/Final_Fantasy_IX",
+        "region_id": 2
+    },
+    {
+        "name": "Final Fantasy IX",
+        "release_date": "2001-02-16",
+        "image": "https://upload.wikimedia.org/wikipedia/en/5/51/Ffixbox.jpg",
+        "video": "https://www.youtube.com/watch?v=Cv7UW2IvfzQ",
+        "website": "https://en.wikipedia.org/wiki/Final_Fantasy_IX",
+        "region_id": 1
+    },
+    {
+        "name": "Final Fantasy IX",
+        "release_date": "2000-11-14",
+        "image": "https://upload.wikimedia.org/wikipedia/en/5/51/Ffixbox.jpg",
+        "video": "https://www.youtube.com/watch?v=Cv7UW2IvfzQ",
+        "website": "https://en.wikipedia.org/wiki/Final_Fantasy_IX",
+        "region_id": 3
+    },
+    {
+        "name": "Final Fantasy Tactics",
+        "release_date": "1997-06-20",
+        "image": "https://upload.wikimedia.org/wikipedia/en/4/4b/Fftbox.jpg",
+        "video": "https://www.youtube.com/watch?v=mUE1Zs_bUvc",
+        "website": "https://en.wikipedia.org/wiki/Final_Fantasy_Tactics",
+        "region_id": 2
+    },
+    {
+        "name": "Final Fantasy Tactics",
+        "release_date": "1998-01-28",
+        "image": "https://upload.wikimedia.org/wikipedia/en/4/4b/Fftbox.jpg",
+        "video": "https://www.youtube.com/watch?v=mUE1Zs_bUvc",
+        "website": "https://en.wikipedia.org/wiki/Final_Fantasy_Tactics",
+        "region_id": 3
+    },
+    {
+        "name": "Megaman",
+        "release_date": "1987-12-17",
+        "image": "https://upload.wikimedia.org/wikipedia/en/9/9b/Rockman_1987.jpg",
+        "video": "https://www.youtube.com/watch?v=uegHMq0Qavo",
+        "website": "https://en.wikipedia.org/wiki/Mega_Man_(1987_video_game)",
+        "region_id": 2
+    },
+    {
+        "name": "Megaman",
+        "release_date": "1989-12-13",
+        "image": "https://upload.wikimedia.org/wikipedia/en/9/9b/Rockman_1987.jpg",
+        "video": "https://www.youtube.com/watch?v=uegHMq0Qavo",
+        "website": "https://en.wikipedia.org/wiki/Mega_Man_(1987_video_game)",
+        "region_id": 1
+    },
+    {
+        "name": "Megaman",
+        "release_date": "1987-12-17",
+        "image": "https://upload.wikimedia.org/wikipedia/en/9/9b/Rockman_1987.jpg",
+        "video": "https://www.youtube.com/watch?v=uegHMq0Qavo",
+        "website": "https://en.wikipedia.org/wiki/Mega_Man_(1987_video_game)",
+        "region_id": 3
+    },
+    {
+        "name": "Megaman",
+        "release_date": "1999-08-05",
+        "image": "https://upload.wikimedia.org/wikipedia/en/9/9b/Rockman_1987.jpg",
+        "video": "https://www.youtube.com/watch?v=uegHMq0Qavo",
+        "website": "https://en.wikipedia.org/wiki/Mega_Man_(1987_video_game)",
+        "region_id": 3
+    },
+    {
+        "name": "Metal Gear Solid",
+        "release_date": "1998-09-03",
+        "image": "https://upload.wikimedia.org/wikipedia/en/thumb/3/33/Metal_Gear_Solid_cover_art.png/250px-Metal_Gear_Solid_cover_art.png",
+        "video": "https://www.youtube.com/watch?v=fKt_-_wfSiY",
+        "website": "https://en.wikipedia.org/wiki/Metal_Gear_Solid_(1998_video_game)",
+        "region_id": 2
+    },
+    {
+        "name": "Metal Gear Solid",
+        "release_date": "1999-02-22",
+        "image": "https://upload.wikimedia.org/wikipedia/en/thumb/3/33/Metal_Gear_Solid_cover_art.png/250px-Metal_Gear_Solid_cover_art.png",
+        "video": "https://www.youtube.com/watch?v=fKt_-_wfSiY",
+        "website": "https://en.wikipedia.org/wiki/Metal_Gear_Solid_(1998_video_game)",
+        "region_id": 1
+    },
+    {
+        "name": "Metal Gear Solid",
+        "release_date": "1998-10-20",
+        "image": "https://upload.wikimedia.org/wikipedia/en/thumb/3/33/Metal_Gear_Solid_cover_art.png/250px-Metal_Gear_Solid_cover_art.png",
+        "video": "https://www.youtube.com/watch?v=fKt_-_wfSiY",
+        "website": "https://en.wikipedia.org/wiki/Metal_Gear_Solid_(1998_video_game)",
+        "region_id": 3
+    }
+]

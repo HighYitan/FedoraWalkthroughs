@@ -1,0 +1,54 @@
+[
+    {
+        "game_release_id": 1,
+        "platform_id": 2
+    },
+    {
+        "game_release_id": 2,
+        "platform_id": 9
+    },
+    {
+        "game_release_id": 3,
+        "platform_id": 9
+    },
+    {
+        "game_release_id": 4,
+        "platform_id": 9
+    },
+    {
+        "game_release_id": 5,
+        "platform_id": 9
+    },
+    {
+        "game_release_id": 6,
+        "platform_id": 9
+    },
+    {
+        "game_release_id": 7,
+        "platform_id": 1
+    },
+    {
+        "game_release_id": 8,
+        "platform_id": 1
+    },
+    {
+        "game_release_id": 9,
+        "platform_id": 1
+    },
+    {
+        "game_release_id": 10,
+        "platform_id": 9
+    },
+    {
+        "game_release_id": 11,
+        "platform_id": 9
+    },
+    {
+        "game_release_id": 12,
+        "platform_id": 9
+    },
+    {
+        "game_release_id": 13,
+        "platform_id": 9
+    }
+]

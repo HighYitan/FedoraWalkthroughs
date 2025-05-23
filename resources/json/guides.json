@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Guía completa de Shin Megami Tensei",
+        "game_release_id": 1,
+        "language_id": 1,
+        "user_id": 1
+    },
+    {
+        "title": "Final Fantasy IX: Guía definitiva",
+        "game_release_id": 2,
+        "language_id": 1,
+        "user_id": 1
+    },
+    {
+        "title": "Comprehensive guide for Final Fantasy Tactics",
+        "game_release_id": 5,
+        "language_id": 3,
+        "user_id": 2
+    },
+    {
+        "title": "How to beat the first Megaman",
+        "game_release_id": 7,
+        "language_id": 3,
+        "user_id": 1
+    },
+    {
+        "title": "Guide with all the secrets of Metal Gear Solid",
+        "game_release_id": 11,
+        "language_id": 3,
+        "user_id": 2
+    }
+]
