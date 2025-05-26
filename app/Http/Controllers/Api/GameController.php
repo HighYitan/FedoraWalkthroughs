@@ -132,19 +132,6 @@ class GameController extends Controller
      */
     public function update(Request $request, Game $game)
     {
-        /*$request->validate([
-            'nombre_inicial'                => 'nullable|string|min:2|max:255',
-            'traducciones'                  => 'nullable|array|min:1',
-            'traducciones.*.descripcion'    => 'nullable|string|min:6|max:5000',
-            'traducciones.*.idioma'         => 'nullable|string|exists:languages,locale',
-            'generos'                       => 'nullable|array|min:1',
-            'generos.*.nombre_inicial'      => 'nullable|string|exists:genres,slug',
-            'destacado'                     => 'nullable|in:Y,N',
-            'imagen'                        => 'nullable|url|min:6|max:255',
-            'video'                         => 'nullable|url|min:6|max:255',
-            'web'                           => 'nullable|url|min:6|max:255',
-        ]);*/
-
         $validator = Validator::make($request->all(), [
             'nombre_inicial'                => 'nullable|string|min:2|max:255',
             'traducciones'                  => 'nullable|array|min:1',

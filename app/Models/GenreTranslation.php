@@ -8,6 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class GenreTranslation extends Model
 {
+    protected $fillable = [
+        'name',
+        'description',
+        'genre_id',
+        'language_id',
+    ];
     public function genre()
     {
         return $this->belongsTo(Genre::class);  // N:1

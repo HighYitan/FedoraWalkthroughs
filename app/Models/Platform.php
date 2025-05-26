@@ -8,6 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Platform extends Model
 {
+    protected $fillable = [
+        'name',
+        'release_year',
+        'image',
+        'company_id'
+    ];
     public function company()
     {
         return $this->belongsTo(Company::class);  // N:1

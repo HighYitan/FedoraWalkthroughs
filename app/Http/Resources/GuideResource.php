@@ -23,8 +23,8 @@ class GuideResource extends JsonResource
             "titulo"    => $this->title,
             "puntuacion_media"  => $this->when(!is_null($this->rating), $this->rating),
             "aprobada" => $this->is_approved ? 'Sí' : 'No',
-            "lanzamiento_videojuego" => $this->when(
-                $this->relationLoaded('gameRelease') && !$this->isFromApiGame($request),
+            "lanzamiento" => $this->when(
+                $this->relationLoaded('gameRelease') && !$this->isFromApiGameRelease($request),
                 new GameReleaseResource($this->gameRelease)
             ),
             "idioma" => new LanguageResource($this->language),
@@ -38,8 +38,8 @@ class GuideResource extends JsonResource
     {
         return strpos($request->getPathInfo(), '/api/user') !== false;
     }
-    private function isFromApiGame(Request $request): bool
+    private function isFromApiGameRelease(Request $request): bool
     {
-        return strpos($request->getPathInfo(), '/api/game') !== false;
+        return strpos($request->getPathInfo(), '/api/gameRelease') !== false;
     }
 }
