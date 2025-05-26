@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Http\Resources\ContentGuideResource;
 use App\Http\Resources\GameReleaseResource;
 use App\Http\Resources\LanguageResource;
 use App\Http\Resources\UserResource;
@@ -23,6 +24,7 @@ class GuideResource extends JsonResource
             "titulo"    => $this->title,
             "puntuacion_media"  => $this->when(!is_null($this->rating), $this->rating),
             "aprobada" => $this->is_approved ? 'Sí' : 'No',
+            "contenidos" => ContentGuideResource::collection($this->whenLoaded('contentGuides')),
             "lanzamiento" => $this->when(
                 $this->relationLoaded('gameRelease') && !$this->isFromApiGameRelease($request),
                 new GameReleaseResource($this->gameRelease)

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
+use App\Models\Guide;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\GuideResource;
 
 class GuideController extends Controller
 {
@@ -12,7 +14,9 @@ class GuideController extends Controller
      */
     public function index()
     {
-        //
+        $guides = Guide::all();
+
+        return GuideResource::collection($guides);
     }
 
     /**
@@ -26,9 +30,16 @@ class GuideController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Guide $guide)
     {
-        //
+        // Cargar las relaciones necesarias para la guía
+        $guide->load([
+            "contentGuides",
+            "user",
+            "gameRelease"
+        ]);
+
+        return new GuideResource($guide);
     }
 
     /**

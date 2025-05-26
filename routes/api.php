@@ -1,16 +1,17 @@
 <?php
 
-use App\Http\Controllers\Api\AuthController;
-use App\Http\Controllers\Api\BoardController;
-use App\Http\Controllers\Api\CompanyController;
-use App\Http\Controllers\Api\GameController;
-use App\Http\Controllers\Api\GameReleaseController;
-use App\Http\Controllers\Api\GenreController;
-use App\Http\Controllers\Api\PlatformController;
-use App\Http\Controllers\Api\RoleController;
-use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\GameController;
+use App\Http\Controllers\Api\RoleController;
+use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Api\BoardController;
+use App\Http\Controllers\Api\GenreController;
+use App\Http\Controllers\Api\GuideController;
+use App\Http\Controllers\Api\CompanyController;
+use App\Http\Controllers\Api\PlatformController;
+use App\Http\Controllers\Api\GameReleaseController;
 
 
 
@@ -26,6 +27,7 @@ Route::middleware('auth:sanctum')->group(function () { //Si ApiKeyMiddleware est
     Route::apiResource('platform', PlatformController::class);
     Route::apiResource('game', GameController::class);
     Route::apiResource('gameRelease', GameReleaseController::class);
+    Route::apiResource('guide', GuideController::class);
     Route::apiResource('board', BoardController::class);
     
     Route::post('/logout', [AuthController::class, 'logout']); // Tancar sessió (Eliminar token)

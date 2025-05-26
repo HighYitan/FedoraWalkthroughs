@@ -2,20 +2,22 @@
 
 namespace App\Providers;
 
-use App\Models\Game;
-use App\Models\Role;
-use App\Models\User;
 use App\Models\Board;
-use App\Models\Genre;
 use App\Models\Company;
+use App\Models\ContentGuide;
+use App\Models\Game;
+use App\Models\GameRelease;
+use App\Models\Genre;
+use App\Models\Guide;
 use App\Models\Language;
 use App\Models\Platform;
-use App\Models\GameRelease;
+use App\Models\Role;
+use App\Models\User;
+use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Cache\RateLimiting\Limit;
-use Illuminate\Support\Facades\RateLimiter;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -67,6 +69,24 @@ class AppServiceProvider extends ServiceProvider
                 abort(404, 'ID inválido');
             }
             return GameRelease::findOrFail($id);
+        });
+
+        Route::bind('guide', function ($value) {
+            try {
+                $id = Crypt::decryptString($value);
+            } catch (\Exception $e) {
+                abort(404, 'ID inválido');
+            }
+            return Guide::findOrFail($id);
+        });
+
+        Route::bind('contentGuide', function ($value) {
+            try {
+                $id = Crypt::decryptString($value);
+            } catch (\Exception $e) {
+                abort(404, 'ID inválido');
+            }
+            return ContentGuide::findOrFail($id);
         });
 
         Route::bind('board', function ($value) {
