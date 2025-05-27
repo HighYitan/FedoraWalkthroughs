@@ -11,6 +11,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Guide extends Model
 {
+    protected $fillable = [
+        'title',
+        'rating',
+        'is_approved',
+        'game_release_id',
+        'language_id',
+        'user_id'
+    ];
     public function contentGuides()
     {
         return $this->hasMany(ContentGuide::class);  // 1:N
