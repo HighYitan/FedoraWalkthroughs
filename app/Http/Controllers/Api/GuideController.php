@@ -134,6 +134,6 @@ class GuideController extends Controller
 
         $guide->delete();
 
-        return response()->json(['message' => 'Guía eliminada correctamente'], 200);
+        return (new GuideResource($guide))->additional(['meta' => 'Guía eliminada correctamente']);
     }
 }

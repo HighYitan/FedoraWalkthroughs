@@ -45,15 +45,11 @@ class ContentGuideController extends Controller
      */
     public function update(SaveContentRequest $request, ContentGuide $contentGuide)
     {
-        //dd($contentGuide->id);
-        //dd($request->all());
         $contentGuide->update([
             'name' => $request->nombre,
             'content' => $request->contenido,
             'guide_id' => $request->guia_id,
         ]);
-
-        //$contentGuide->refresh(); // Recarga el modelo con los valores actualizados de la BD
 
         return (new ContentGuideResource($contentGuide))->additional(['meta' => 'Sección actualizada correctamente']);
     }
@@ -61,8 +57,10 @@ class ContentGuideController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(ContentGuide $contentGuide)
     {
-        //
+        $contentGuide->delete();
+
+        return (new ContentGuideResource($contentGuide))->additional(['meta' => 'Sección eliminada correctamente']);
     }
 }

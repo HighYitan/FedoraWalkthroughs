@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use App\Http\Resources\ContentGuideResource;
 use App\Http\Resources\GameReleaseResource;
+use App\Http\Resources\GuideRatingResource;
 use App\Http\Resources\LanguageResource;
 use App\Http\Resources\UserResource;
 use Illuminate\Http\Request;
@@ -33,6 +34,10 @@ class GuideResource extends JsonResource
             "usuario" => $this->when(
                 $this->relationLoaded('user') && !$this->isFromApiUser($request),
                 new UserResource($this->user)
+            ),
+            "puntuaciones"   => $this->when(
+                $this->relationLoaded('guideRatings') && $this->guideRatings && $this->guideRatings->isNotEmpty(),
+                GuideRatingResource::collection($this->guideRatings),
             ),
         ];
     }

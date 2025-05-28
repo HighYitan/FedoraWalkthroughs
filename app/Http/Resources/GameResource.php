@@ -20,7 +20,7 @@ class GameResource extends JsonResource
     {
         return [
             "nombre_inicial"    => $this->slug,
-            "puntuacion_media"  => $this->when(!is_null($this->rating), $this->rating),
+            "puntuacion_media"  => $this->when(!is_null($this->rating), number_format($this->rating, 2, '.', '')),
             "destacado" => $this->featured === 'Y' ? 'Sí' : 'No',
             "imagen"            => $this->when(!is_null($this->image), $this->image),
             "video"             => $this->when(!is_null($this->video), $this->video),
@@ -35,7 +35,7 @@ class GameResource extends JsonResource
                 GameReleaseResource::collection($this->gameReleases),
             ),
             "puntuaciones"   => $this->when(
-                $this->relationLoaded('gameRatings') && $this->gameRatings && $this->gameRatings->isNotEmpty() && !$this->isFromApiUser($request),
+                $this->relationLoaded('gameRatings') && $this->gameRatings && $this->gameRatings->isNotEmpty(),
                 GameRatingResource::collection($this->gameRatings),
             ),
         ];

@@ -8,6 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class NewsLanguage extends Model
 {
+    protected $fillable = [
+        'title',
+        'content',
+        'image',
+        'news_id',
+        'language_id'
+    ];
     public function language()
     {
         return $this->belongsTo(Language::class);  // N:1

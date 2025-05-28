@@ -6,6 +6,7 @@ use App\Http\Resources\GuideResource;
 use App\Http\Resources\UserResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\Crypt;
 
 class GuideRatingResource extends JsonResource
 {
@@ -17,7 +18,8 @@ class GuideRatingResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            "puntuacion"    => $this->rating,
+            "id" => Crypt::encryptString($this->id),
+            "puntuacion" => $this->rating,
             "guia" => $this->when(
                 $this->relationLoaded('guide') && !$this->isFromApiGuide($request),
                 new GuideResource($this->guide)

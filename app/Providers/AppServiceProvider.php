@@ -6,10 +6,12 @@ use App\Models\Board;
 use App\Models\Company;
 use App\Models\ContentGuide;
 use App\Models\Game;
+use App\Models\GameRating;
 use App\Models\GameRelease;
 use App\Models\Genre;
 use App\Models\Guide;
 use App\Models\Language;
+use App\Models\News;
 use App\Models\Platform;
 use App\Models\Role;
 use App\Models\User;
@@ -71,6 +73,15 @@ class AppServiceProvider extends ServiceProvider
             return GameRelease::findOrFail($id);
         });
 
+        Route::bind('gameRating', function ($value) {
+            try {
+                $id = Crypt::decryptString($value);
+            } catch (\Exception $e) {
+                abort(404, 'ID inválido');
+            }
+            return GameRating::findOrFail($id);
+        });
+
         Route::bind('guide', function ($value) {
             try {
                 $id = Crypt::decryptString($value);
@@ -80,7 +91,7 @@ class AppServiceProvider extends ServiceProvider
             return Guide::findOrFail($id);
         });
 
-        Route::bind('contentGuide', function ($value) {
+        Route::bind('content', function ($value) {
             try {
                 $id = Crypt::decryptString($value);
             } catch (\Exception $e) {
@@ -96,6 +107,10 @@ class AppServiceProvider extends ServiceProvider
                 abort(404, 'ID inválido');
             }
             return Board::findOrFail($id);
+        });
+
+        Route::bind('news', function ($value) {
+            return News::where('slug', $value)->firstOrFail();
         });
 
         RateLimiter::for('api', function ($request) {

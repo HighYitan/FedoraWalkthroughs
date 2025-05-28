@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\UserInterfaceResource;
+use App\Models\UserInterface;
 use Illuminate\Http\Request;
 
 class UserInterfaceController extends Controller
@@ -12,7 +14,9 @@ class UserInterfaceController extends Controller
      */
     public function index()
     {
-        //
+        $userInterfaces = UserInterface::all();
+        
+        return UserInterfaceResource::collection($userInterfaces);
     }
 
     /**

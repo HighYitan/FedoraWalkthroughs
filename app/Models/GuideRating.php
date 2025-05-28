@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class GuideRating extends Model
 {
+    protected $fillable = [
+        'rating',
+        'guide_id',
+        'user_id'
+    ];
     public function guide()
     {
         return $this->belongsTo(Guide::class);  // N:1
