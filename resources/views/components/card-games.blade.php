@@ -11,10 +11,10 @@
         <h5 class="mb-2 text-xl font-medium leading-tight">Imágen: {{ $game['imagen'] }}</h5>
     @endif
     @if (isset($game['video']))
-        <h5 class="mb-2 text-xl font-medium leading-tight">Imágen: {{ $game['video'] }}</h5>
+        <h5 class="mb-2 text-xl font-medium leading-tight">Vídeo: {{ $game['video'] }}</h5>
     @endif
     @if (isset($game['web']))
-        <h5 class="mb-2 text-xl font-medium leading-tight">Imágen: {{ $game['web'] }}</h5>
+        <h5 class="mb-2 text-xl font-medium leading-tight">Página Web: {{ $game['web'] }}</h5>
     @endif
     @foreach ($game['traducciones'] as $traduccion)
         @if ($traduccion['idioma']['abreviatura'] === 'ES')
@@ -25,13 +25,26 @@
             <h5 class="mb-2 text-xl font-medium leading-tight">Descripción EN: {{ $traduccion['descripcion'] }}</h5>
         @endif
     @endforeach
-    @foreach ($game['generos'] as $genero)
-        @if ($genero['idioma']['abreviatura'] === 'ES')
-            <h5 class="mb-2 text-xl font-medium leading-tight">Género ES: {{ $genero['nombre'] }}</h5>
-        @elseif ($genero['idioma']['abreviatura'] === 'CA')
-            <h5 class="mb-2 text-xl font-medium leading-tight">Género CA: {{ $genero['nombre'] }}</h5>
-        @elseif ($genero['idioma']['abreviatura'] === 'EN')
-            <h5 class="mb-2 text-xl font-medium leading-tight">Género EN: {{ $genero['nombre'] }}</h5>
+    @php
+        $generosPorIdioma = [
+            'ES' => [],
+            'CA' => [],
+            'EN' => [],
+        ];
+        foreach ($game['generos'] as $genero) {
+            foreach ($genero['traducciones'] as $traduccion) {
+                $abbr = $traduccion['idioma']['abreviatura'];
+                if (isset($generosPorIdioma[$abbr])) {
+                    $generosPorIdioma[$abbr][] = $traduccion['nombre'];
+                }
+            }
+        }
+    @endphp
+    @foreach ($generosPorIdioma as $abbr => $nombres)
+        @if (count($nombres))
+            <h5 class="mb-2 text-xl font-medium leading-tight">
+                Género {{ $abbr }}: {{ implode(', ', $nombres) }}
+            </h5>
         @endif
     @endforeach
     <div class="flex gap-2 mt-4">
@@ -39,12 +52,12 @@
             <a href="{{route('game.index')}}" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Volver</a>
         @endif
         @if (Route::currentRouteName() !== 'game.show')
-            <a href="{{route('game.show', ['game' => $game['id']])}}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Mostrar</a>
+            <a href="{{route('game.show', ['game' => $game['nombre_inicial']])}}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Mostrar</a>
         @endif
         @if (Route::currentRouteName() !== 'game.edit')
-            <a href="{{route('game.edit', ['game' => $game['id']])}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Editar</a>
+            <a href="{{route('game.edit', ['game' => $game['nombre_inicial']])}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Editar</a>
         @endif
-        <form action="{{route('game.destroy', ['game' => $game['id']])}}" method="POST" class="ml-auto">
+        <form action="{{route('game.destroy', ['game' => $game['nombre_inicial']])}}" method="POST" class="ml-auto">
             @method('DELETE')
             @csrf
             <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Eliminar</button>

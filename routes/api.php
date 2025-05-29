@@ -27,7 +27,15 @@ Route::middleware('auth:sanctum')->group(function () { //Si ApiKeyMiddleware est
     Route::apiResource('genre', GenreController::class);
     Route::apiResource('company', CompanyController::class);
     Route::apiResource('platform', PlatformController::class);
-    Route::apiResource('game', GameController::class);
+    Route::apiResource('game', GameController::class)->names([
+        'index' => 'api.game.index',
+        'show' => 'api.game.show',
+        'store' => 'api.game.store',
+        'update' => 'api.game.update',
+        'destroy' => 'api.game.destroy',
+        'create' => 'api.game.create',
+        'edit' => 'api.game.edit',
+    ]);
     Route::apiResource('gameRelease', GameReleaseController::class);
     Route::apiResource('gameRating', GameRatingController::class)->except(['index', 'show']);
     Route::apiResource('guide', GuideController::class);
@@ -46,7 +54,15 @@ Route::middleware(['ApiKeyMiddleware'])->group(function () {
     Route::apiResource('genre', GenreController::class);
     Route::apiResource('company', CompanyController::class);
     Route::apiResource('platform', PlatformController::class);
-    Route::apiResource('game', GameController::class);
+    Route::apiResource('game', GameController::class)->names([
+        'index' => 'api.game.index',
+        'show' => 'api.game.show',
+        'store' => 'api.game.store',
+        'update' => 'api.game.update',
+        'destroy' => 'api.game.destroy',
+        'create' => 'api.game.create',
+        'edit' => 'api.game.edit',
+    ]);
     Route::apiResource('gameRelease', GameReleaseController::class);
     Route::apiResource('gameRating', GameRatingController::class)->except(['index', 'show']);
     Route::apiResource('guide', GuideController::class);

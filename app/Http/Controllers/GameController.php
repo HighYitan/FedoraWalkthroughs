@@ -17,7 +17,7 @@ class GameController extends Controller
         $response = Http::withToken($token)->get(url('/api/game'));
         // Get the data from the API response
         $games = $response->json('data');
-        
+        //dd($games); // Debugging line to check the data structure
         return view('game.index', ['games' => $games]); // compact creates an array like ['games' => $games]
     }
 

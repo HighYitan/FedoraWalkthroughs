@@ -28,6 +28,10 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        $user = Auth::user();
+        $token = $user->createToken('auth_token')->plainTextToken;
+        session(['api_token' => $token]);
+
         return redirect()->intended(route('dashboard', absolute: false));
     }
 
@@ -41,6 +45,8 @@ class AuthenticatedSessionController extends Controller
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
+
+        $request->session()->forget('api_token'); // Remove the API token from session
 
         return redirect('/');
     }
