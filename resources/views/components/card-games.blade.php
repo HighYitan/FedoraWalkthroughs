@@ -6,15 +6,15 @@
     @if (isset($game['puntuacion_media']))
         <h5 class="mb-2 text-xl font-medium leading-tight">Puntuación media: {{ $game['puntuacion_media'] }}</h5>
     @endif
-    <h5 class="mb-2 text-xl font-medium leading-tight">Destacado: <span class="break-all">{{ $game['destacado'] }}</span></h5>
+    <h5 class="mb-2 text-xl font-medium leading-tight">Destacado: {{ $game['destacado'] }}</span></h5>
     @if (isset($game['imagen']))
-        <h5 class="mb-2 text-xl font-medium leading-tight">Imágen: {{ $game['imagen'] }}</h5>
+        <h5 class="mb-2 text-xl font-medium leading-tight">Imágen: <span class="break-all">{{ $game['imagen'] }}</h5>
     @endif
     @if (isset($game['video']))
-        <h5 class="mb-2 text-xl font-medium leading-tight">Vídeo: {{ $game['video'] }}</h5>
+        <h5 class="mb-2 text-xl font-medium leading-tight">Vídeo: <span class="break-all">{{ $game['video'] }}</h5>
     @endif
     @if (isset($game['web']))
-        <h5 class="mb-2 text-xl font-medium leading-tight">Página Web: {{ $game['web'] }}</h5>
+        <h5 class="mb-2 text-xl font-medium leading-tight">Página Web: <span class="break-all">{{ $game['web'] }}</h5>
     @endif
     @foreach ($game['traducciones'] as $traduccion)
         @if ($traduccion['idioma']['abreviatura'] === 'ES')
@@ -43,10 +43,28 @@
     @foreach ($generosPorIdioma as $abbr => $nombres)
         @if (count($nombres))
             <h5 class="mb-2 text-xl font-medium leading-tight">
-                Género {{ $abbr }}: {{ implode(', ', $nombres) }}
+                @if (count($nombres) === 1)
+                    Género {{ $abbr }}: {{ $nombres[0] }}
+                @else
+                    Géneros {{ $abbr }}: {{ implode(', ', $nombres) }}
+                @endif
             </h5>
         @endif
     @endforeach
+    @if (!empty($game['lanzamientos']))
+        <div class="mb-4">
+            <h4 class="mb-2 text-2xl font-medium leading-tight">Lanzamientos</h4>
+            <ul class="list-disc ml-6">
+                @foreach ($game['lanzamientos'] as $lanzamiento)
+                    <li>
+                        <p class="font-bold">Nombre: {{ $lanzamiento['nombre'] }}</p>
+                        <p class="font-bold">Fecha: {{ $lanzamiento['lanzamiento'] }}</p>
+                        <p class="font-bold">Región: {{ $lanzamiento['region']['nombre_inicial'] }} </p> 
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <div class="flex gap-2 mt-4">
         @if (Route::currentRouteName() !== 'game.index')
             <a href="{{route('game.index')}}" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Volver</a>

@@ -10,6 +10,7 @@ use App\Models\GameRating;
 use App\Models\GameRelease;
 use App\Models\Genre;
 use App\Models\Guide;
+use App\Models\GuideRating;
 use App\Models\Language;
 use App\Models\News;
 use App\Models\Platform;
@@ -98,6 +99,15 @@ class AppServiceProvider extends ServiceProvider
                 abort(404, 'ID inválido');
             }
             return ContentGuide::findOrFail($id);
+        });
+
+        Route::bind('guideRating', function ($value) {
+            try {
+                $id = Crypt::decryptString($value);
+            } catch (\Exception $e) {
+                abort(404, 'ID inválido');
+            }
+            return GuideRating::findOrFail($id);
         });
 
         Route::bind('board', function ($value) {

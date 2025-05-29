@@ -65,7 +65,9 @@ class GuideController extends Controller
         $guide->load([
             "contentGuides",
             "user",
-            "gameRelease"
+            "gameRelease",
+            "guideRatings",
+            "guideRatings.user",
         ]);
 
         return new GuideResource($guide);
