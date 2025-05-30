@@ -39,21 +39,21 @@
                             @endforeach
                         </div>
                         <div class="mb-3">
-                            <label for="descripcionES">Descripción ES:</label>
+                            <label for="descripcionES">Descripción ES</label>
                             <textarea class="mt-1 block w-full" style="@error('descripcionES') border-color:RED; @enderror" name="descripcionES" minlength="6" maxlength="5000"></textarea>
                             @foreach ($errors->get('descripcionES') as $message)
                                 <div class="text-red-500">{{$message}}</div>
                             @endforeach
                         </div>
                         <div class="mb-3">
-                            <label for="descripcionCA">Descripción CA:</label>
+                            <label for="descripcionCA">Descripción CA</label>
                             <textarea class="mt-1 block w-full" style="@error('descripcionCA') border-color:RED; @enderror" name="descripcionCA" minlength="6" maxlength="5000"></textarea>
                             @foreach ($errors->get('descripcionCA') as $message)
                                 <div class="text-red-500">{{$message}}</div>
                             @endforeach
                         </div>
                         <div class="mb-3">
-                            <label for="descripcionEN">Descripción EN:</label>
+                            <label for="descripcionEN">Descripción EN</label>
                             <textarea class="mt-1 block w-full" style="@error('descripcionEN') border-color:RED; @enderror" name="descripcionEN" minlength="6" maxlength="5000"></textarea>
                             @foreach ($errors->get('descripcionEN') as $message)
                                 <div class="text-red-500">{{$message}}</div>
@@ -117,7 +117,7 @@
 
                                         {{-- Plataformas --}}
                                         <div>
-                                            <label>Plataformas</label>
+                                            <label>Plataforma</label>
                                             <div class="plataformas-container">
                                                 @php $plataformas = $lanzamiento['plataformas'] ?? [['plataforma' => '']]; @endphp
                                                 @foreach ($plataformas as $j => $plataforma)
@@ -135,7 +135,7 @@
 
                                         {{-- Desarrolladores --}}
                                         <div>
-                                            <label>Desarrolladores</label>
+                                            <label>Desarrollador</label>
                                             <div class="desarrolladores-container">
                                                 @php $desarrolladores = $lanzamiento['desarrolladores'] ?? [['nombre' => '']]; @endphp
                                                 @foreach ($desarrolladores as $j => $dev)
@@ -153,7 +153,7 @@
 
                                         {{-- Distribuidores --}}
                                         <div>
-                                            <label>Distribuidores</label>
+                                            <label>Distribuidor</label>
                                             <div class="distribuidores-container">
                                                 @php $distribuidores = $lanzamiento['distribuidores'] ?? [['nombre' => '']]; @endphp
                                                 @foreach ($distribuidores as $j => $dist)
@@ -185,7 +185,11 @@
     </div>
 </x-app-layout>
 <script>
-    let generoIndex = {{ count(old('generos', [['nombre_inicial' => '']])) }};
+    let generoIndex = (() => { // Encuentra el último índice de genero
+        const containers = document.querySelectorAll('#generos-container [data-index]');
+        if (containers.length === 0) return 0;
+        return Math.max(...Array.from(containers).map(el => parseInt(el.getAttribute('data-index')))) + 1;
+    })();
     function addGenero() {
         const container = document.getElementById('generos-container');
         const div = document.createElement('div');
@@ -263,5 +267,12 @@
         `;
         container.appendChild(div);
         lanzamientoIndex++;
+    }
+    function removeLanzamiento() {
+        const container = document.getElementById('lanzamientos-container');
+        if (container.children.length > 1) { // Previene eliminar el último lanzamiento
+            container.lastElementChild.remove();
+            lanzamientoIndex--;
+        }
     }
 </script>

@@ -23,6 +23,13 @@ class GameReleaseController extends Controller
     {
         $gameReleases = GameRelease::all();
 
+        $gameReleases->load([
+            'game',
+            'platforms',
+            'gameDevelopers.company',
+            'gamePublishers.company',
+        ]);
+
         return GameReleaseResource::collection($gameReleases);
     }
 

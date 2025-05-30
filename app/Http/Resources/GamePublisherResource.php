@@ -17,11 +17,11 @@ class GamePublisherResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            "distribuidora" => $this->when(
+            $this->mergeWhen(
                 $this->relationLoaded('company') && $this->company && !$this->isFromApiCompany($request),
                 new CompanyResource($this->company)
             ),
-            "lanzamiento" => $this->when(
+            $this->mergeWhen(
                 $this->relationLoaded('gameRelease') && $this->gameRelease && !$this->isFromApiGameRelease($request),
                 new GameReleaseResource($this->gameRelease)
             ),

@@ -14,11 +14,11 @@ class GameController extends Controller
      */
     public function index()
     {
-        $token = session('api_token'); // Get the token from the session
+        $token = session('api_token'); // Token de la sesión
         $response = Http::withToken($token)->get(url('/api/game'));
-        // Get the data from the API response
+        // Recibe la respuesta de la API y la convierte a un array
         $games = $response->json('data');
-        //dd($games); // Debugging line to check the data structure
+
         return view('game.index', ['games' => $games]); // compact creates an array like ['games' => $games]
     }
 
@@ -99,24 +99,82 @@ class GameController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Game $game)
     {
-        //
+        $token = session('api_token'); // Get the token from the session
+        $response = Http::withToken($token)->get(url('/api/game/' . $game->slug));
+        $game = $response->json('data');
+
+        $response = Http::withToken($token)->get(url('/api/genre'));
+        $genres = $response->json('data');
+        $response = Http::withToken($token)->get(url('/api/region'));
+        $regions = $response->json('data');
+        $response = Http::withToken($token)->get(url('/api/platform'));
+        $platforms = $response->json('data');
+        $response = Http::withToken($token)->get(url('/api/company'));
+        $companies = $response->json('data');
+
+        return view('game.edit', ['game' => $game, 'genres' => $genres, 'regions' => $regions, 'platforms' => $platforms, 'companies' => $companies]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Game $game)
     {
-        //
+        $descripcionES = $request->input('descripcionES');
+        $descripcionCA = $request->input('descripcionCA');
+        $descripcionEN = $request->input('descripcionEN');
+        $traducciones = [
+            [
+                'descripcion' => $descripcionES,
+                'idioma' => 'ES'
+            ],
+            [
+                'descripcion' => $descripcionCA,
+                'idioma' => 'CA'
+            ],
+            [
+                'descripcion' => $descripcionEN,
+                'idioma' => 'EN'
+            ]
+        ];
+        $data = $request->all();
+        $data['traducciones'] = $traducciones;
+
+        $token = session('api_token'); // Get the token from the session
+        $response = Http::withToken($token)->withHeaders([
+            'Accept' => 'application/json',
+            'Content-Type' => 'application/json'
+        ])->put(url('/api/game/' . $game->slug), $data);
+
+        if ($response->failed()) {
+            $apiErrors = $response->json('errors') ?? ['api' => ['Error al actualizar el videojuego']];
+            return redirect()
+                ->back()
+                ->withInput()
+                ->withErrors($apiErrors);
+        }
+
+        return redirect()->route('game.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Game $game)
     {
-        //
+        $token = session('api_token'); // Get the token from the session
+        $response = Http::withToken($token)->delete(url('/api/game/' . $game->slug));
+
+        if ($response->failed()) {
+            $apiErrors = $response->json('errors') ?? ['api' => ['Error al eliminar el videojuego']];
+            return redirect()
+                ->back()
+                ->withInput()
+                ->withErrors($apiErrors);
+        }
+
+        return redirect()->route('game.index');
     }
 }

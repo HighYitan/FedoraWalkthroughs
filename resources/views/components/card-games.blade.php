@@ -6,15 +6,15 @@
     @if (isset($game['puntuacion_media']))
         <h5 class="mb-2 text-xl font-medium leading-tight">Puntuación media: {{ $game['puntuacion_media'] }}</h5>
     @endif
-    <h5 class="mb-2 text-xl font-medium leading-tight">Destacado: {{ $game['destacado'] }}</span></h5>
+    <h5 class="mb-2 text-xl font-medium leading-tight">Destacado: {{ $game['destacado'] }}</h5>
     @if (isset($game['imagen']))
-        <h5 class="mb-2 text-xl font-medium leading-tight">Imágen: <span class="break-all">{{ $game['imagen'] }}</h5>
+        <h5 class="mb-2 text-xl font-medium leading-tight">Imágen: <span class="break-all"><a href="{{ $game['imagen'] }}" target="_blank" class="text-blue-600 underline">{{ $game['imagen'] }}</a></h5>
     @endif
     @if (isset($game['video']))
-        <h5 class="mb-2 text-xl font-medium leading-tight">Vídeo: <span class="break-all">{{ $game['video'] }}</h5>
+        <h5 class="mb-2 text-xl font-medium leading-tight">Vídeo: <span class="break-all"><a href="{{ $game['video'] }}" target="_blank" class="text-blue-600 underline">{{ $game['video'] }}</a></h5>
     @endif
     @if (isset($game['web']))
-        <h5 class="mb-2 text-xl font-medium leading-tight">Página Web: <span class="break-all">{{ $game['web'] }}</h5>
+        <h5 class="mb-2 text-xl font-medium leading-tight">Página Web: <span class="break-all"><a href="{{ $game['web'] }}" target="_blank" class="text-blue-600 underline">{{ $game['web'] }}</a></h5>
     @endif
     @foreach ($game['traducciones'] as $traduccion)
         @if ($traduccion['idioma']['abreviatura'] === 'ES')
@@ -59,7 +59,7 @@
                     <li>
                         <p class="font-bold">Nombre: {{ $lanzamiento['nombre'] }}</p>
                         <p class="font-bold">Fecha: {{ $lanzamiento['lanzamiento'] }}</p>
-                        <p class="font-bold">Región: {{ $lanzamiento['region']['nombre_inicial'] }} </p> 
+                        <p class="font-bold">Región: {{ $lanzamiento['region']['nombre_inicial'] }}</p> 
                     </li>
                 @endforeach
             </ul>

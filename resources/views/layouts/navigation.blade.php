@@ -19,6 +19,12 @@
                     <x-nav-link :href="route('game.index')" :active="request()->routeIs('game.index')">
                         {{ __('Videojuegos') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('gameRelease.index')" :active="request()->routeIs('gameRelease.index')">
+                        {{ __('Lanzamientos') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('guide.index')" :active="request()->routeIs('guide.index')">
+                        {{ __('Guías') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -76,6 +82,12 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('game.index')" :active="request()->routeIs('game.index')">
                 {{ __('Videojuegos') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('gameRelease.index')" :active="request()->routeIs('gameRelease.index')">
+                {{ __('Lanzamientos') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('guide.index')" :active="request()->routeIs('guide.index')">
+                {{ __('Guías') }}
             </x-responsive-nav-link>
         </div>
 
