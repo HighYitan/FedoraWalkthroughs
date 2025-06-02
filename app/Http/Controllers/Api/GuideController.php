@@ -21,6 +21,10 @@ class GuideController extends Controller
     {
         $guides = Guide::all();
 
+        $guides->load([
+            "user",
+        ]);
+        
         return GuideResource::collection($guides);
     }
 

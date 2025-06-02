@@ -25,7 +25,7 @@ class BoardResource extends JsonResource
             "descripcion"   => $this->description,
             "idioma"        => new LanguageResource($this->language),
             "autor"   => $this->when(
-                $this->relationLoaded('user') && $this->user && !$this->isFromApiUser($request),
+                $this->relationLoaded('user') && !$this->isFromApiUser($request),
                 new UserResource($this->user)
             ),
             // Quizá habría que meter una condición para que no se muestre desde game/gamerelease api

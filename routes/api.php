@@ -31,17 +31,27 @@ Route::middleware('auth:sanctum')->group(function () { //Si ApiKeyMiddleware est
     Route::apiResource('company', CompanyController::class);
     Route::apiResource('platform', PlatformController::class);
     Route::apiResource('game', GameController::class)->names([
-        'index' => 'api.game.index',
-        'show' => 'api.game.show',
-        'store' => 'api.game.store',
-        'update' => 'api.game.update',
-        'destroy' => 'api.game.destroy',
-        'create' => 'api.game.create',
-        'edit' => 'api.game.edit',
+        'index'     => 'api.game.index',
+        'show'      => 'api.game.show',
+        'store'     => 'api.game.store',
+        'update'    => 'api.game.update',
+        'destroy'   => 'api.game.destroy',
     ]);
-    Route::apiResource('gameRelease', GameReleaseController::class);
+    Route::apiResource('gameRelease', GameReleaseController::class)->names([
+        'index'     => 'api.gameRelease.index',
+        'show'      => 'api.gameRelease.show',
+        'store'     => 'api.gameRelease.store',
+        'update'    => 'api.gameRelease.update',
+        'destroy'   => 'api.gameRelease.destroy',
+    ]);
     Route::apiResource('gameRating', GameRatingController::class)->except(['index', 'show']);
-    Route::apiResource('guide', GuideController::class);
+    Route::apiResource('guide', GuideController::class)->names([
+        'index'     => 'api.guide.index',
+        'show'      => 'api.guide.show',
+        'store'     => 'api.guide.store',
+        'update'    => 'api.guide.update',
+        'destroy'   => 'api.guide.destroy',
+    ]);
     Route::apiResource('content', ContentGuideController::class)->except(['index', 'show']);
     Route::apiResource('guideRating', GuideRatingController::class)->except(['index', 'show']);
     Route::apiResource('board', BoardController::class);
@@ -58,17 +68,27 @@ Route::middleware(['ApiKeyMiddleware'])->group(function () {
     Route::apiResource('company', CompanyController::class);
     Route::apiResource('platform', PlatformController::class);
     Route::apiResource('game', GameController::class)->names([
-        'index' => 'api.game.index',
-        'show' => 'api.game.show',
-        'store' => 'api.game.store',
-        'update' => 'api.game.update',
-        'destroy' => 'api.game.destroy',
-        'create' => 'api.game.create',
-        'edit' => 'api.game.edit',
+        'index'     => 'api.game.index',
+        'show'      => 'api.game.show',
+        'store'     => 'api.game.store',
+        'update'    => 'api.game.update',
+        'destroy'   => 'api.game.destroy',
     ]);
-    Route::apiResource('gameRelease', GameReleaseController::class);
+    Route::apiResource('gameRelease', GameReleaseController::class)->names([
+        'index'     => 'api.gameRelease.index',
+        'show'      => 'api.gameRelease.show',
+        'store'     => 'api.gameRelease.store',
+        'update'    => 'api.gameRelease.update',
+        'destroy'   => 'api.gameRelease.destroy',
+    ]);
     Route::apiResource('gameRating', GameRatingController::class)->except(['index', 'show']);
-    Route::apiResource('guide', GuideController::class);
+    Route::apiResource('guide', GuideController::class)->names([
+        'index'     => 'api.guide.index',
+        'show'      => 'api.guide.show',
+        'store'     => 'api.guide.store',
+        'update'    => 'api.guide.update',
+        'destroy'   => 'api.guide.destroy',
+    ]);
     Route::apiResource('content', ContentGuideController::class)->except(['index', 'show']);
     Route::apiResource('guideRating', GuideRatingController::class)->except(['index', 'show']);
     Route::apiResource('board', BoardController::class);

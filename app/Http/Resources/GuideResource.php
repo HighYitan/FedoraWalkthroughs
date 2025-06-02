@@ -25,16 +25,13 @@ class GuideResource extends JsonResource
             "titulo"    => $this->title,
             "puntuacion_media"  => $this->when(!is_null($this->rating), $this->rating),
             "aprobada" => $this->is_approved ? 'Sí' : 'No',
+            "usuario" => new UserResource($this->user),
             "contenidos" => ContentGuideResource::collection($this->whenLoaded('contentGuides')),
             "lanzamiento" => $this->when(
-                $this->relationLoaded('gameRelease') && !$this->isFromApiGameRelease($request),
+                !$this->isFromApiGameRelease($request),
                 new GameReleaseResource($this->gameRelease)
             ),
             "idioma" => new LanguageResource($this->language),
-            "usuario" => $this->when(
-                $this->relationLoaded('user') && !$this->isFromApiUser($request),
-                new UserResource($this->user)
-            ),
             "puntuaciones"   => $this->when(
                 $this->relationLoaded('guideRatings') && $this->guideRatings && $this->guideRatings->isNotEmpty(),
                 GuideRatingResource::collection($this->guideRatings),

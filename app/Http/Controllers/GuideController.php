@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Guide;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Crypt;
 
 class GuideController extends Controller
 {
@@ -12,11 +16,11 @@ class GuideController extends Controller
     public function index()
     {
         $token = session('api_token');
-        $response = Http::withToken($token)->get(url('/api/gameRelease'));
+        $response = Http::withToken($token)->get(url('/api/guide'));
 
-        $gameReleases = $response->json('data');
+        $guides = $response->json('data');
 
-        return view('gameRelease.index', ['gameReleases' => $gameReleases]);
+        return view('guide.index', ['guides' => $guides]);
     }
 
     /**
@@ -24,7 +28,14 @@ class GuideController extends Controller
      */
     public function create()
     {
-        //
+        $token = session('api_token');
+
+        $response = Http::withToken($token)->get(url('/api/gameRelease'));
+        $gameReleases = $response->json('data');
+        $response = Http::withToken($token)->get(url('/api/language'));
+        $languages = $response->json('data');
+
+        return view('guide.create', ['gameReleases' => $gameReleases, 'languages' => $languages]);
     }
 
     /**
@@ -32,15 +43,22 @@ class GuideController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Guide $guide)
     {
-        //
+        $token = session('api_token');
+
+        $encryptedId = Crypt::encryptString($guide->id);
+        $response = Http::withToken($token)->get(url('/api/guide/' . $encryptedId));
+
+        $guide = $response->json('data');
+
+        return view('guide.show', ['guide' => $guide]);
     }
 
     /**
