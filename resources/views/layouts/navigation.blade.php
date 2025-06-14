@@ -25,6 +25,21 @@
                     <x-nav-link :href="route('guide.index')" :active="request()->routeIs('guide.index')">
                         {{ __('Guías') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('user.index')" :active="request()->routeIs('user.index')">
+                        {{ __('Usuarios') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('news.index')" :active="request()->routeIs('news.index')">
+                        {{ __('Noticias') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('company.index')" :active="request()->routeIs('company.index')">
+                        {{ __('Compañías') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('platform.index')" :active="request()->routeIs('platform.index')">
+                        {{ __('Plataformas') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('genre.index')" :active="request()->routeIs('genre.index')">
+                        {{ __('Géneros') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -88,6 +103,21 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('guide.index')" :active="request()->routeIs('guide.index')">
                 {{ __('Guías') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('user.index')" :active="request()->routeIs('user.index')">
+                {{ __('Usuarios') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('news.index')" :active="request()->routeIs('news.index')">
+                {{ __('Noticias') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('company.index')" :active="request()->routeIs('company.index')">
+                {{ __('Compañías') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('platform.index')" :active="request()->routeIs('platform.index')">
+                {{ __('Plataformas') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('genre.index')" :active="request()->routeIs('genre.index')">
+                {{ __('Géneros') }}
             </x-responsive-nav-link>
         </div>
 

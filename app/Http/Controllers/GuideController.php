@@ -43,7 +43,24 @@ class GuideController extends Controller
      */
     public function store(Request $request)
     {
+        $data = $request->all();
+        $data['correo'] = auth()->user()->email;
 
+        $token = session('api_token');
+        $response = Http::withToken($token)->withHeaders([
+            'Accept' => 'application/json',
+            'Content-Type' => 'application/json'
+        ])->post(url('/api/guide'), $data);
+
+        if ($response->failed()) {
+            $apiErrors = $response->json('errors') ?? ['api' => ['Error al crear la guía']];
+            return redirect()
+                ->back()
+                ->withInput()
+                ->withErrors($apiErrors);
+        }
+
+        return redirect()->route('guide.index');
     }
 
     /**
@@ -64,24 +81,65 @@ class GuideController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Guide $guide)
     {
-        //
+        $token = session('api_token');
+
+        $encryptedId = Crypt::encryptString($guide->id);
+        $response = Http::withToken($token)->get(url('/api/guide/' . $encryptedId));
+
+        $guide = $response->json('data');
+
+        $response = Http::withToken($token)->get(url('/api/gameRelease'));
+        $gameReleases = $response->json('data');
+        $response = Http::withToken($token)->get(url('/api/language'));
+        $languages = $response->json('data');
+
+        return view('guide.edit', ['guide' => $guide, 'gameReleases' => $gameReleases, 'languages' => $languages]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Guide $guide)
     {
-        //
+        $data = $request->all();
+        $data['correo'] = auth()->user()->email;
+
+        $token = session('api_token');
+        $encryptedId = Crypt::encryptString($guide->id);
+        $response = Http::withToken($token)->withHeaders([
+            'Accept' => 'application/json',
+            'Content-Type' => 'application/json'
+        ])->put(url('/api/guide/' . $encryptedId), $data);
+
+        if ($response->failed()) {
+            $apiErrors = $response->json('errors') ?? ['api' => ['Error al actualizar la guía']];
+            return redirect()
+                ->back()
+                ->withInput()
+                ->withErrors($apiErrors);
+        }
+
+        return redirect()->route('guide.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Guide $guide)
     {
-        //
+        $token = session('api_token');
+        $encryptedId = Crypt::encryptString($guide->id);
+        $response = Http::withToken($token)->delete(url('/api/guide/' . $encryptedId));
+
+        if ($response->failed()) {
+            $apiErrors = $response->json('errors') ?? ['api' => ['Error al eliminar la guía']];
+            return redirect()
+                ->back()
+                ->withErrors($apiErrors);
+        }
+
+        return redirect()->route('guide.index');
     }
 }

@@ -48,7 +48,7 @@ class GameReleaseResource extends JsonResource
                 GuideResource::collection($this->guides)
             ),
             "temas" => $this->when(
-                $this->relationLoaded('boards') && $this->boards && $this->boards->isNotEmpty() && !$this->isFromApiBoard($request),
+                $this->relationLoaded('boards') && $this->boards && $this->boards->isNotEmpty() && !$this->isFromApiBoard($request) && !$this->isFromApiUser($request),
                 BoardResource::collection($this->boards)
             ),
         ];
@@ -68,5 +68,9 @@ class GameReleaseResource extends JsonResource
     private function isFromApiPlatform(Request $request): bool
     {
         return strpos($request->getPathInfo(), '/api/platform') !== false;
+    }
+    private function isFromApiUser(Request $request): bool
+    {
+        return strpos($request->getPathInfo(), '/api/user') !== false;
     }
 }

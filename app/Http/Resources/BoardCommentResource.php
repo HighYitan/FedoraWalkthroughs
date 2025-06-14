@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use App\Http\Resources\BoardCommentImageResource;
+use App\Http\Resources\BoardResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Crypt;
@@ -24,6 +25,14 @@ class BoardCommentResource extends JsonResource
                 $this->relationLoaded('boardCommentImages'),
                 BoardCommentImageResource::collection($this->boardCommentImages),
             ),
+            "foro" => $this->when(
+                $this->board && !$this->isFromApiBoard($request),
+                new BoardResource($this->board)
+            ),
         ];
+    }
+    private function isFromApiBoard(Request $request): bool
+    {
+        return strpos($request->getPathInfo(), '/api/board') !== false;
     }
 }

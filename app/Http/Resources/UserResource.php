@@ -31,6 +31,7 @@ class UserResource extends JsonResource
             "foros" => $this->when(
                 $this->relationLoaded('boards') && $this->boards && $this->boards->isNotEmpty() && !$this->isFromApiBoard($request), // Si compruebas la relación cargada después de lo demás, las comprobaciones anteriores lo cargan y lo hace cierto siempre.
                 fn () => (BoardResource::collection($this->boards)->toArray($request))
+                //BoardResource::collection($this->boards)
             ),
             "guias" => $this->when(
                 $this->relationLoaded('guides') && $this->guides && $this->guides->isNotEmpty() && !$this->isFromApiGuide($request),

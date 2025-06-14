@@ -21,11 +21,11 @@ class PlatformResource extends JsonResource
             "lanzamiento"   => $this->release_year,
             "imagen"        => $this->image,
             "desarrollador"  => $this->when(
-                !$this->isFromApiCompany($request) && !$this->isFromApiGameRelease($request),
+                !$this->isFromApiCompany($request) && !$this->isFromApiGameRelease($request) && !$this->isFromApiUser($request),
                 new CompanyResource($this->company)
             ),
             "lanzamientos" => $this->when(
-                $this->relationLoaded('gameReleases') && $this->gameReleases && $this->gameReleases->isNotEmpty() && !$this->isFromApiGameRelease($request),
+                $this->relationLoaded('gameReleases') && $this->gameReleases && $this->gameReleases->isNotEmpty() && !$this->isFromApiGameRelease($request) && !$this->isFromApiUser($request),
                 GameReleaseResource::collection($this->gameReleases)
             ),
         ];
@@ -37,5 +37,9 @@ class PlatformResource extends JsonResource
     private function isFromApiGameRelease(Request $request): bool
     {
         return strpos($request->getPathInfo(), '/api/gameRelease') !== false;
+    }
+    private function isFromApiUser(Request $request): bool
+    {
+        return strpos($request->getPathInfo(), '/api/user') !== false;
     }
 }

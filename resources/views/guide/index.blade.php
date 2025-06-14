@@ -6,7 +6,7 @@
                 {{ __('Listado de Guías') }}
             </h2>
             <a href="{{ route('guide.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                Añadir
+                Crear
             </a>
         </div>
     </x-slot>

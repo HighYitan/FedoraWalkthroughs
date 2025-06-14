@@ -53,12 +53,12 @@ class AppServiceProvider extends ServiceProvider
             return Genre::where('slug', $value)->firstOrFail(); // Only search by 'slug'
         });
 
-        Route::bind('platform', function ($value) {
-            return Platform::where('name', $value)->firstOrFail(); // Only search by 'name'
-        });
-
         Route::bind('company', function ($value) {
             return Company::where('name', $value)->firstOrFail(); // Only search by 'name'
+        });
+
+        Route::bind('platform', function ($value) {
+            return Platform::where('name', $value)->firstOrFail(); // Only search by 'name'
         });
 
         Route::bind('game', function ($value) {

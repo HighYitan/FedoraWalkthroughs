@@ -10,6 +10,7 @@ use App\Models\Guide;
 use App\Models\Language;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Validator;
 
 class GuideController extends Controller
@@ -42,12 +43,18 @@ class GuideController extends Controller
             return response()->json(['error' => 'Usuario no encontrado'], 404);
         }
 
-        $createdGuide = Guide::create([
+        $guideData = [
             'title'             => $request->titulo,
             'game_release_id'   => $request->lanzamiento_id,
             'language_id'       => $languageId,
             'user_id'           => $userId,
-        ]);
+        ];
+
+        if ($request->has('aprobado')) { // Solo si se ha enviado el campo 'aprobado' (Backoffice)
+            $guideData['is_approved'] = $request->aprobado;
+        }
+
+        $createdGuide = Guide::create($guideData);
 
         foreach ($request->contenidos as $contenido) { // Crea el contenido de la guía (Secciones (name) + Párrafos (content))
             ContentGuide::create([
@@ -80,8 +87,14 @@ class GuideController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(SaveGuideRequest $request, Guide $guide)
+    public function update(Request $request, Guide $guide)
     {
+        if ($request->filled('lanzamiento_id')) {
+            $request->merge([
+                'lanzamiento_id' => Crypt::decryptString($request->input('lanzamiento_id'))
+            ]);
+        }
+        
         $validator = Validator::make($request->all(), [
             'titulo'            => 'nullable|string|min:6|max:100',
             'aprobado'          => 'nullable|in:0,1',

@@ -39,7 +39,10 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'role_id' => 1, // Rol de administrador
         ]);
+        $token = $user->createToken('auth_token')->plainTextToken;
+        session(['api_token' => $token]);
 
         event(new Registered($user));
 

@@ -24,6 +24,7 @@ class SaveGuideRequest extends FormRequest
     {
         return [
             'titulo'                                    => 'required|string|min:6|max:100',
+            'aprobado'                                  => 'nullable|in:0,1',
             'contenidos'                                => 'required|array|min:1',
             'contenidos.*.nombre'                       => 'required|string|min:2|max:100',
             'contenidos.*.contenido'                    => 'required|string|min:6|max:10000',
@@ -39,6 +40,7 @@ class SaveGuideRequest extends FormRequest
             'titulo.string'                             => "Título ha de ser una cadena de texto",
             'titulo.min'                                => "Mínimo 6 car",
             'titulo.max'                                => "Máximo 100 car",
+            'aprobado.in'                               => "Aprobado ha de ser 0 o 1",
             'contenidos.required'                       => "Contenidos son obligatorios",
             'contenidos.array'                          => "Contenidos ha de ser un array",
             'contenidos.min'                            => "Debe haber al menos un contenido",

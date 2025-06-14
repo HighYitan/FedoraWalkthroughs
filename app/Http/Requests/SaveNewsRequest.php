@@ -49,6 +49,7 @@ class SaveNewsRequest extends FormRequest
             'traducciones.*.contenido.min'      => "Mínimo 6 car para el contenido de la traducción",
             'traducciones.*.contenido.max'      => "Máximo 10000 car para el contenido de la traducción",
             'traducciones.*.idioma.required'    => "Idioma de la traducción es obligatorio",
+            'traducciones.*.imagen.required'    => "Imagen de la traducción es obligatoria",
             'traducciones.*.imagen.url'         => "Imagen de la traducción ha de ser una URL",
             'traducciones.*.imagen.min'         => "Mínimo 6 car para la imagen de la traducción",
             'traducciones.*.imagen.max'         => "Máximo 255 car para la imagen de la traducción",

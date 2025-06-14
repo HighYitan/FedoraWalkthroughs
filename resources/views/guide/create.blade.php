@@ -11,28 +11,40 @@
                     <form action="{{ route('guide.store') }}" method="post">
                         @csrf  <!-- Security Token -->
                         <div class="mb-3">
-                            <label for="nombre_inicial">Título de la guía</label>
+                            <label for="titulo">Título de la guía</label>
                             <input type="text" class="mt-1 block w-full" style="@error('titulo') border-color:RED; @enderror" name="titulo" />
                             @foreach ($errors->get('titulo') as $message)
                                 <div class="text-red-500">{{$message}}</div>
                             @endforeach
                         </div>
                         <div class="mb-3">
-                            <label for="aprobada" class="form-label">Guía aprobada</label>
-                            <select name="aprobada" class="mt-1 block w-full">
-                                <option value="0">No</option>
-                                <option value="1">Sí</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="nombre_inicial">Lanzamiento</label>
-                            <select name="nombre_inicial" class="mt-1 block w-full mb-1">
+                            <label for="lanzamiento_id">Lanzamiento</label>
+                            <select name="lanzamiento_id" class="mt-1 block w-full mb-1">
                                 <option value="">Selecciona un lanzamiento</option>
                                 @foreach ($gameReleases as $gameRelease)
                                     <option value="{{ $gameRelease['id'] }}">
-                                        {{ $gameRelease['nombre'] - $gameRelease['region']['nombre_inicial'] - $gameRelease['lanzamiento'] }}
+                                        {{ $gameRelease['nombre'] . '-' . $gameRelease['region']['nombre_inicial'] . '-' . $gameRelease['lanzamiento'] }}
                                     </option>
                                 @endforeach
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="idioma">Idioma</label>
+                            <select name="idioma" class="mt-1 block w-full mb-1">
+                                <option value="">Selecciona un idioma</option>
+                                @foreach ($languages as $language)
+                                    <option value="{{ $language['abreviatura'] }}">{{ $language['nombre'] }}</option>
+                                @endforeach
+                            </select>
+                            @foreach ($errors->get('idioma') as $message)
+                                <div class="text-red-500">{{$message}}</div>
+                            @endforeach
+                        </div>
+                        <div class="mb-3">
+                            <label for="aprobado" class="form-label">Guía aprobada</label>
+                            <select name="aprobado" class="mt-1 block w-full">
+                                <option value="0">No</option>
+                                <option value="1">Sí</option>
                             </select>
                         </div>
                         <div class="mb-3">
@@ -41,9 +53,9 @@
                                     $oldContenidos = old('contenidos', [['nombre' => '', 'contenido' => '']]);
                                 @endphp
                                 @foreach ($oldContenidos as $i => $contenido)
-                                    <div class="flex gap-2 mb-2" data-index="{{ $i }}">
+                                    <div class="flex flex-col gap-2 mb-2" data-index="{{ $i }}">
                                         <label class="w-full">Sección</label>
-                                        <input type="text" name="contenidos[{{ $i }}][nombre]" placeholder="Nombre" value="{{ $contenido['nombre'] ?? '' }}" class="mt-1 block w-full mb-1" />
+                                        <input type="text" name="contenidos[{{ $i }}][nombre]" placeholder="Nombre" value="{{ $contenido['nombre'] ?? '' }}" class="mt-1 block w-full" />
                                         <label class="w-full">Contenido</label>
                                         <textarea class="mt-1 block w-full" name="contenidos[{{ $i }}][contenido]" minlength="6" maxlength="10000">{{ $contenido['contenido'] ?? '' }}</textarea>
                                     </div>
@@ -57,7 +69,7 @@
                         </div>
                         <div>
                             <a href="{{route('guide.index')}}" class="inline-flex items-center justify-center bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Volver</a>
-                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Añadir</button>
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Crear</button>
                         </div>
                     </form>
                 </div>
@@ -74,7 +86,7 @@
     function addContenido() {
         const container = document.getElementById('contenidos-container');
         const div = document.createElement('div');
-        div.className = 'flex gap-2 mb-2';
+        div.className = 'flex flex-col gap-2 mb-2';
         div.setAttribute('data-index', contenidoIndex);
 
         div.innerHTML = `

@@ -29,6 +29,14 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
 
         $user = Auth::user();
+
+        if ($user->role->name !== 'Administrador') { // Comprueba si el usuario es administrador
+            Auth::logout();
+            return redirect()->route('login')->withErrors([
+                'email' => 'Solo los administradores pueden iniciar sesión.',
+            ]);
+        }
+
         $token = $user->createToken('auth_token')->plainTextToken;
         session(['api_token' => $token]);
 

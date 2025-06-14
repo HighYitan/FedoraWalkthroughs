@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SaveUserRequest;
 use App\Http\Resources\UserResource;
+use App\Models\Game;
+use App\Models\Guide;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -17,6 +19,10 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
+
+        $users->load([
+            "role"
+        ]);
 
         return UserResource::collection($users);
     }
@@ -44,6 +50,7 @@ class UserController extends Controller
             "boardComments.boardCommentImages",
             "gameRatings",
             "gameRatings.game",
+            "guides",
             "guideRatings",
             "guideRatings.guide",
             "guideRatings.guide.gameRelease",
@@ -100,7 +107,6 @@ class UserController extends Controller
         $gameIds = $user->gameRatings()->pluck('game_id')->unique();
         $guideIds = $user->guideRatings()->pluck('guide_id')->unique();
         $user->gameRatings()->delete();
-        $user->guides()->delete();
         $user->guideRatings()->delete();
         foreach ($gameIds as $gameId) {
             $game = Game::find($gameId);
@@ -114,6 +120,7 @@ class UserController extends Controller
                 $guide->updateAverageRating(); // Actualiza la puntuación media de cada guía
             }
         }
+        $user->guides()->delete();
         // Revoca todos los tokens del usuario (/register y /login)
         $user->tokens()->delete();
         // Eliminación del usuario

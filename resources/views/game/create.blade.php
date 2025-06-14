@@ -19,21 +19,21 @@
                         </div>
                         <div class="mb-3">
                             <label for="imagen">Imágen</label>
-                            <input type="text" class="mt-1 block w-full" style="@error('imagen') border-color:RED; @enderror" name="imagen" />
+                            <input type="url" class="mt-1 block w-full" style="@error('imagen') border-color:RED; @enderror" name="imagen" />
                             @foreach ($errors->get('imagen') as $message)
                                 <div class="text-red-500">{{$message}}</div>
                             @endforeach
                         </div>
                         <div class="mb-3">
                             <label for="video">Vídeo</label>
-                            <input type="text" class="mt-1 block w-full" style="@error('video') border-color:RED; @enderror" name="video" />
+                            <input type="url" class="mt-1 block w-full" style="@error('video') border-color:RED; @enderror" name="video" />
                             @foreach ($errors->get('video') as $message)
                                 <div class="text-red-500">{{$message}}</div>
                             @endforeach
                         </div>
                         <div class="mb-3">
                             <label for="web">Página Web</label>
-                            <input type="text" class="mt-1 block w-full" style="@error('web') border-color:RED; @enderror" name="web" />
+                            <input type="url" class="mt-1 block w-full" style="@error('web') border-color:RED; @enderror" name="web" />
                             @foreach ($errors->get('web') as $message)
                                 <div class="text-red-500">{{$message}}</div>
                             @endforeach

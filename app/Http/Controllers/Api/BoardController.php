@@ -19,6 +19,10 @@ class BoardController extends Controller
     {
         $boards = Board::all();
 
+        $boards->load([
+            "user"
+        ]);
+
         return BoardResource::collection($boards);
     }
 
