@@ -33,12 +33,26 @@ class GameRatingController extends Controller
         if (!$userId) {
             return response()->json(['error' => 'Usuario no encontrado'], 404);
         }
-
-        $createdGameRating = GameRating::create([
-            'rating'  => $request->puntuacion,
-            'game_id' => $gameId,
-            'user_id' => $userId
-        ]);
+        //try{
+        $createdGameRating = GameRating::updateOrCreate(
+            [
+                'game_id' => $gameId, // Unique fields
+                'user_id' => $userId  // Unique fields
+            ],
+            [
+                'rating' => $request->puntuacion // Fields to update
+            ]
+        );
+        //}
+        /*catch (QueryException $e) {
+            // Check for duplicate entry error code
+            if ($e->errorInfo[1] == 1062) {
+                // Update the existing rating
+                GameRating::where('game_id', $gameId)
+                    ->where('user_id', $userId)
+                    ->update(['rating' => $request->puntuacion]);
+            }
+        }*/
         
         $game = Game::find($gameId);
 

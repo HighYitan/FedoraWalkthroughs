@@ -132,7 +132,8 @@ class GuideController extends Controller
             'title'             => $request->titulo,
             'game_release_id'   => $request->lanzamiento_id,
             'language_id'       => $languageId,
-            'user_id'           => $userId,
+            //'user_id'           => $userId,
+            'user_id'           => $guide->user_id, // Mantener el usuario original que creó la guía
             'is_approved'       => $request->aprobado 
         ]);
 

@@ -30,11 +30,21 @@ class GuideRatingController extends Controller
             return response()->json(['error' => 'Usuario no encontrado'], 404);
         }
 
-        $createdGuideRating = GuideRating::create([
+        /*$createdGuideRating = GuideRating::create([
             'rating'  => $request->puntuacion,
             'guide_id' => $request->guia,
             'user_id' => $userId
-        ]);
+        ]);*/
+
+        $createdGuideRating = GuideRating::updateOrCreate( //Si el usuario desde el Frontend ya ha puntuado la guía, se actualiza la puntuación, si no, se crea una nueva puntuación.
+            [
+                'guide_id' => $request->guia,
+                'user_id' => $userId
+            ],
+            [
+                'rating'  => $request->puntuacion,
+            ]
+        );
         
         $guide = Guide::find($request->guia);
 

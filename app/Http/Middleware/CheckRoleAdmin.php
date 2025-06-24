@@ -16,7 +16,7 @@ class CheckRoleAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::user()->role->name == 'Administrador') { //Autentica si un usuario es administrador o gestor para cuando hagamos BackOffice
+        if (Auth::user()->role->name == 'Administrador') { //Autentica si un usuario es administrador para cuando hagamos BackOffice
             return $next($request);
         }
         abort(401);

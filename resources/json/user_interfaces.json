@@ -58,5 +58,35 @@
         "name": "Forums",
         "user_interface_id": 4,
         "language_id": 3
+    },
+    {
+        "name": "Idioma",
+        "user_interface_id": 5,
+        "language_id": 1
+    },
+    {
+        "name": "Llenguatge",
+        "user_interface_id": 5,
+        "language_id": 2
+    },
+    {
+        "name": "Language",
+        "user_interface_id": 5,
+        "language_id": 3
+    },
+    {
+        "name": "País",
+        "user_interface_id": 6,
+        "language_id": 1
+    },
+    {
+        "name": "País",
+        "user_interface_id": 6,
+        "language_id": 2
+    },
+    {
+        "name": "Country",
+        "user_interface_id": 6,
+        "language_id": 3
     }
 ]
